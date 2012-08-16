@@ -1,0 +1,1 @@
+<?php$settings = array();$settings_query = "SELECT `name`,`value`,`group` FROM `settings` ORDER BY `group`";$settings_db = $db->query($settings_query);while ( $setting = $settings_db->fetch(PDO::FETCH_ASSOC) )	$settings[ $setting['group'] ][ $setting['name'] ] = $setting['value'];/*echo "<pre>";print_r($settings);//*/

@@ -1,0 +1,80 @@
+@import url('../modules/navbar.css');
+
+html {
+	
+}
+
+body {
+	background-color:black;
+    color: #ddd;
+    font-family: Arial;
+}
+a {
+    color: green;
+    text-decoration: none;
+}
+	a:link {}
+	a:hover {
+		text-decoration: underline;
+	}
+	a:active {
+		color: white;
+	}
+	a:visited {
+		color:green;
+	}
+
+form {}
+	form fieldset {
+		border-radius:2px;
+	}
+	form input {}
+	form textarea {}
+	
+#wrapper {
+    width: 1000px;
+    margin: 0 auto;
+	box-shadow: 0 0 10px black;
+}
+	#header,
+	#main,
+	#footer {
+		text-align:center;
+	}
+	#header {
+		position:relative;
+		background-color:#333;
+	}
+	/*	#header a {
+			display:block;
+		}
+	*/
+	#main {}
+	#footer {background-color:#333;}
+
+		/*** #main content ***/
+		#left-column {
+			width:250px;
+			height:500px;
+			background-color:#833;
+		}
+		#middle-column {
+			width:500px;
+			/*height:500px;*/
+			background-color:#383;
+		}
+		#right-column {
+			width:250px;
+			height:500px;
+			background-color:#338;
+		}
+	
+		#outer-footer {
+			text-align:center;
+		}
+			#outer-footer a {
+				font-size:.7em;
+			}
+/* special */
+::-moz-selection {}
+::selection {}

@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+	Options +FollowSymLinks
+    RewriteEngine on
+#	RewriteBase /
+	
+	# Redirect all calls to the /public folder.
+    RewriteRule    ^$    public/    [L]
+    RewriteRule    (.*)  public/$1  [L]
+</IfModule>

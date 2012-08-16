@@ -1,0 +1,84 @@
+div.property-preview {
+	/*background:#fdd;*/
+	/*padding:5px;*/
+	margin-bottom:20px;
+}
+
+div.property-preview a.property-preview-image { /* image container and link */
+	display:block;
+	/*width:200px; height:133px;*/ /* 3x2 */
+	width:300px;    /* 3x2 */
+	float:left;
+	margin-right:10px;
+	overflow:hidden;
+	
+	background:white;
+	padding:4px;
+	border:1px solid #888;
+	border-radius:4px;
+	
+	box-shadow: 0 5px 5px -5px #010101;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	ms-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+}
+div.property-preview a.property-preview-image:hover { /* image container hovered */
+	/*
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
+	*/
+	background:orange;
+}
+
+	div.property-preview a.property-preview-image img { /* image */
+		width:300px;
+		/*height:200px;*/
+		float:left;
+		margin-right:10px;
+	}
+
+
+.property-preview a.property-preview-title { 
+	color:#1E5799;
+	/*text-shadow:1px 1px 1px #aaa;*/
+	font-weight:bold;
+	
+	-webkit-transition: all .5s;			
+	-moz-transition: all .5s;
+	ms-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;	
+}
+.property-preview a.property-preview-title:hover {
+	text-decoration:none;
+	color:#266fc4;
+	/*margin-left:5px;*/
+} 
+
+.property-preview div.property-preview-description {
+	padding-right:5px;
+	padding-top:10px;
+	padding-bottom:10px;
+	text-align:justify;
+	border-top:1px solid #888;
+	/*
+	background: #feffff;
+	background: -moz-linear-gradient(top, #feffff 0%, #d2ebf9 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(100%,#d2ebf9));
+	background: -webkit-linear-gradient(top, #feffff 0%,#d2ebf9 100%);
+	background: -o-linear-gradient(top, #feffff 0%,#d2ebf9 100%);
+	background: -ms-linear-gradient(top, #feffff 0%,#d2ebf9 100%);
+	background: linear-gradient(top, #feffff 0%,#d2ebf9 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d2ebf9',GradientType=0 );
+	*/
+}
+
+a.read-more {
+	color:#FF5615;
+}

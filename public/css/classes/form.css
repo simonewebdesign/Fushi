@@ -1,0 +1,25 @@
+form#filters {}
+
+#filters label,
+#filters select,
+#filters input {
+	display:block;
+	float:left;	
+}
+
+#filters label {
+	width:100px;
+}
+
+#filters select,
+#filters input {
+
+}
+
+#filters select {
+	width:180px;
+}
+
+#filters input {
+	width:100px;
+}

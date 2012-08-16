@@ -1,0 +1,55 @@
+#login-form {
+	width:240px;
+	margin-left:20px;
+}
+
+#login-form label,
+#login-form textarea,
+#login-form input {
+	display:block;
+	border:0;
+	padding:2px;
+}
+
+#login-form label {
+	width:100px;
+}
+
+#login-form textarea,
+#login-form input {
+
+}
+
+#login-form textarea {
+	width:300px;
+}
+
+#login-form input {
+	width:200px;
+}
+
+#login-form input[type="submit"] {
+	float:right;
+	padding:6px 24px;
+	width:auto;
+	margin-top:10px;
+}
+
+#login-form p {
+	margin:12px 0;
+}
+
+#login-form fieldset {
+	margin: 10px;
+	border:1px solid #ccc;
+	padding:10px;
+}
+
+#login-form legend {
+	font-weight:bold;
+	padding:0 10px;	
+}
+
+.required-asterisk {
+	color:#EA1919;
+}

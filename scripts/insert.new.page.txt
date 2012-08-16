@@ -1,0 +1,1 @@
+INSERT INTO pages (`title`,`subtitle`,`content`,`tree`) VALUES ('','','','');

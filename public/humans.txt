@@ -1,0 +1,51 @@
+/* OWNER */
+
+  // PLAYPC.IT di Rossi Alberto
+  Site: www.playpc.it
+  Location: Italy
+
+  
+  
+/* DEVELOPER */
+
+  // Simone Vittori
+  Site: www.simonewebdesign.it
+  Location: Italy
+  
+
+  
+/* SPECIAL THANKS TO */
+...
+ 
+  
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: jQuery
+  Framework: Fushi - https://github.com/simonewebdesign/Fushi
+  
+
+
+
+                               -o/-
+                               +oo//-
+                              :ooo+//:
+                             -ooooo///-
+                             /oooooo//:
+                            :ooooooo+//-
+                           -+oooooooo///-
+           -://////////////+oooooooooo++////////////::
+            :+ooooooooooooooooooooooooooooooooooooo+:::-
+              -/+ooooooooooooooooooooooooooooooo+/::////:-
+                -:+oooooooooooooooooooooooooooo/::///////:-
+                  --/+ooooooooooooooooooooo+::://////:-
+                     -:+ooooooooooooooooo+:://////:--
+                       /ooooooooooooooooo+//////:-
+                      -ooooooooooooooooooo////-
+                      /ooooooooo+oooooooooo//:
+                     :ooooooo+/::/+oooooooo+//-
+                    -oooooo/::///////+oooooo///-
+                    /ooo+::://////:---:/+oooo//:
+                   -o+/::///////:-      -:/+o+//-
+                   :-:///////:-            -:/://
+                     -////:-                 --//:
+                       --                       -:

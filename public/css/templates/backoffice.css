@@ -1,0 +1,193 @@
+/* begin standard styles - don't delete this! */
+
+@import url('default.css');
+@import url('../modules/topbar.css');
+@import url('../modules/login-form.css');
+
+body {
+	margin-top:32px; /* height of topbar */
+}
+
+a.action, .icon {
+	display:block;
+	padding-left:20px;
+	padding-right:6px;
+	background-repeat:no-repeat !important;
+	background-position:left !important; /* If you only specify one keyword, the other value will be "center". - http://www.w3schools.com/cssref/pr_background-position.asp */
+}
+	/* all valid/possible actions */
+	.true {		background-image:url('../../img/icons/sweetieplus/badge-circle-check-16-ns.png') !important; }
+	.false {		background-image:url('../../img/icons/sweetieplus/badge-circle-minus-16-ns.png') !important; }
+	.create {	background-image:url('../../img/icons/sweetieplus/badge-square-plus-16-ns.png') !important; }
+	.update {	background-image:url('../../img/icons/sweetieplus/page-pencil-16-ns.png') !important; }
+	.delete {	background-image:url('../../img/icons/sweetieplus/cross-16-ns.png') !important; }
+	.preview {	background-image:url('../../img/icons/sweetieplus/page-forum-16-ns.png') !important; }
+	.view {		background-image:url('../../img/icons/sweetieplus/clipboard-eye-16-ns.png') !important; }
+	.send {		background-image:url('../../img/icons/sweetieplus/arrow-right-16-ns.png') !important; }
+	.add {		background-image:url('../../img/icons/sweetieplus/badge-circle-plus-16-ns.png') !important; }	
+	.error {		background-image:url('../../img/icons/sweetieplus/warning-16-ns.png') !important; }
+	.asc {		background-image:url('../../img/icons/sweetieplus/arrow-up-16-ns.png') !important; }
+	.desc {		background-image:url('../../img/icons/sweetieplus/arrow-down-16-ns.png') !important; }
+
+form {}
+	form fieldset {
+		margin: 10px;
+		border:1px solid #ccc;
+		padding:10px;
+	}
+		form fieldset legend {
+			padding:0 10px;
+		}
+		
+	form input,
+	form select,
+	form textarea,
+	form label {
+		display:block;
+		float:left;
+	}
+	
+	form label {
+		width:200px;
+		padding:0 10px;
+	}
+	
+
+td.price {
+	text-align:right;
+	padding-right:20px;
+}
+
+#response {
+	position:relative;
+	display:none; /* will be fadeToggle'd */
+}
+	#response-close {
+		position:absolute;
+		top:3px;
+		right:3px;
+		
+		opacity:.5;
+		
+		width:16px;
+		height:16px;
+
+		line-height:14px;		
+		/*font-size:16px;*/
+		text-align:center;
+		text-shadow:0 0 1px white;
+		color:black;
+		
+		border-radius:8px;
+		
+		background:white;
+	}
+		#response:hover #response-close:hover {
+			opacity:1;
+		}
+		#response:hover #response-close:active {
+			background:red;
+		}
+
+#pages {}
+	#pages a {
+		display:block;
+		width:25px;
+		height:25px;
+		float:left;
+		border:1px solid black;
+		line-height:25px;
+		text-align:center;
+		margin:1px;
+		border-radius:3px;
+	}		
+
+#search input[type="radio"] {
+	margin: 5px 4px 0 15px;
+}
+	
+/* end standard styles - don't delete this! */
+
+body {
+	background-color:black;
+	color:#ddd;
+}
+
+a {
+	color:#3a3;
+}
+a:hover {
+	color:#0f0;
+}
+
+table {
+	width:100%;
+	margin:0 auto;
+	
+}
+	table tr:nth-child(even) {
+		background-color:#333;
+	}
+
+		table tr td {
+			/*text-align:left;*/
+		}
+	
+		table tbody tr:hover {
+			background-color:#d33/*azzurro*/;
+		}
+
+div#table-pages {
+	background:#faa;
+}
+	#table-pages a {
+		display:block;
+		width:25px;
+		height:25px;
+		float:left;
+		border:1px solid black;
+		line-height:25px;
+		text-align:center;
+		margin:1px;
+		border-radius:3px;
+	}
+
+
+#response {	
+	background: #222222;
+	background: -moz-linear-gradient(top, #222222 0%, #333333 50%, #222222 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#222222), color-stop(50%,#333333), color-stop(100%,#222222));
+	background: -webkit-linear-gradient(top, #222222 0%,#333333 50%,#222222 100%);
+	background: -o-linear-gradient(top, #222222 0%,#333333 50%,#222222 100%);
+	background: -ms-linear-gradient(top, #222222 0%,#333333 50%,#222222 100%);
+	background: linear-gradient(top, #222222 0%,#333333 50%,#222222 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#222222',GradientType=0 );
+	
+	border: 1px solid #888;
+	padding:0 16px;
+	border-radius:4px;
+
+	box-shadow:0 0 3px 3px black;
+}
+	#response.positive {
+		color:green;
+		box-shadow:0 0 3px 3px rgba(0,255,0,.3);
+		border: 1px solid #8f8;
+	}
+	#response.negative {
+		color:red;
+		box-shadow:0 0 3px 3px rgba(255,0,0,.3);
+		border: 1px solid #f88;
+	}
+
+
+#header,
+#main,
+#footer {
+	background-color:#222;
+	text-align:left;
+}
+
+#footer {
+	margin-top:10px;
+}
