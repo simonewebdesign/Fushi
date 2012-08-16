@@ -6,7 +6,8 @@ Fushi PHP Boilerplate
 Introduction
 ------------
 
-Fushi is a simple, lightweight PHP boilerplate. (definition of [Boilerplate on Wikipedia](http://en.wikipedia.org/wiki/Boilerplate_code))
+Fushi is a simple, lightweight PHP boilerplate (definition of [Boilerplate on Wikipedia](http://en.wikipedia.org/wiki/Boilerplate_code)).
+
 It can be used for building a large variety of projects.
 
 
