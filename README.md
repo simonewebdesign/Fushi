@@ -77,8 +77,8 @@ In alphabetical order and in a tree-structured way, I'll proceed describing the 
         - **tinymce** the TinyMCE editor, needed by backoffice.
         - **galleria** jQuery galleria plugin.
         - **fancybox** just another freaking jQuery plugin.
-    - **scripts** any script that could reveal useful.	
-    - **tmp** unused.
-        - **cache** unused.
-        - **logs** unused.
-        - **sessions** unused.
+- **scripts** any script that could reveal useful.	
+- **tmp** unused.
+    - **cache** unused.
+    - **logs** unused.
+    - **sessions** unused.
