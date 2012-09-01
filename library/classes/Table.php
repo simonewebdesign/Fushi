@@ -1,7 +1,7 @@
 <?php
-/** A PHP class to fetch a database's table in an object oriented way, with convenient methods for automatic paging and ordering of query results.
- * @version  1.3 - 08/06/2012
- * @author   Simone <info@simonewebdesign.it>
+/** A PHP class to fetch a database's table in an object oriented way, with convenient methods for automatic ordering of query results.
+ * @version  1.4 - 28/08/2012
+ * @author   Simone <hello@simonewebdesign.it>
 */
 
 class Table {
@@ -51,8 +51,8 @@ class Table {
 		$this->limit_row_count 		= $_SESSION['rows_per_page'];
 
 		$this->query = empty($query) ? "SELECT * FROM `{$table_name}`" : $query;
-		$this->query.= $this->order_by ? " ORDER BY `{$this->order_by}` {$this->order_type}" : ''; 
-		$this->query.= " LIMIT {$this->limit_offset}, {$this->limit_row_count}";
+		$this->query .= $this->order_by ? " ORDER BY `{$this->order_by}` {$this->order_type}" : ''; 
+		$this->query .= " LIMIT {$this->limit_offset}, {$this->limit_row_count}";
 //		var_dump($this->query);	
 		$this->result = $db->query($this->query);
 //		var_dump($this->result);		
@@ -65,15 +65,15 @@ class Table {
 	}
 
 	
-	/** Get the result's number of rows. 
-	* @return An integer representing the number of elements of the array $this->rows. In other words, the number of currently displayed elements in the current page. (same as getRowCount())
+	/** Get the number of rows currently displayed in the current page. 
+	* @return An integer representing the number of elements currently displayed. (same as getRowCount())
 	*/	
-	function getNumberOfRows () {
+	function getDisplayedRows() {
 		return count($this->rows);
 	}
 	
-	/** Get the row count.
-	* @return An integer representing the total elements returned by the query result. (same as getNumberOfRows())
+	/** Get the number of rows currently displayed in the current page.
+	* @return An integer representing the total elements currently displayed. (same as getNumberOfCurrentlyDisplayedRows())
 	*/	
 	function getRowCount () {
 		return $this->result->rowCount();
@@ -130,17 +130,17 @@ class Table {
 
 			foreach ( $this->actions as $pure_action => $readable_action ) {
 
-				$html.= '<td>';
-					$html.= '<a ';
-					$html.= 'href="' . ROOT . 
+				$html .= '<td>';
+					$html .= '<a ';
+					$html .= 'href="' . ROOT . 
 					'backoffice/' . $this->table_name .
 					'/' . $pure_action .
 					'/' . $id .
 					'" ';
-					$html.= 'class="action ' . $pure_action . '">';
-					$html.= $readable_action;
-					$html.= '</a>';
-				$html.= '</td>';
+					$html .= 'class="action ' . $pure_action . '">';
+					$html .= $readable_action;
+					$html .= '</a>';
+				$html .= '</td>';
 			}
 		}
 		
@@ -194,12 +194,12 @@ class Table {
 	*/
 	function table () {
 	
-		$table = '<table>';
-		$table.= $this->thead();
-		$table.= $this->tbody();
-		$table.= '</table>';
+		$html = '<table>';
+		$html .= $this->thead();
+		$html .= $this->tbody();
+		$html .= '</table>';
 		
-		return $table;
+		return $html;
 	}
 	
 	/** HTML the <thead>.
@@ -209,126 +209,38 @@ class Table {
 	
 		$order_type = $this->order_type == 'asc' ? 'desc' : 'asc';
 	
-		$head = '<thead>';
-			$head.= '<tr>';
+		$html = '<thead>';
+			$html .= '<tr>';
 			foreach ( $this->columns as $column_name ) {
 			
 				$class = $this->order_by == $column_name ? 'icon ' . $this->order_type : '';
 			
-				$head.= '<th>';
-					$head.= '<a class="' . $class . '" href="' . ROOT . 'backoffice/' . $this->table_name . '/order/' . $column_name . '/' . $order_type . '">' . humanize($column_name) . '</a>';
-				$head.= '</th>';
+				$html .= '<th>';
+					$html .= '<a class="' . $class . '" href="' . ROOT . 'backoffice/' . $this->table_name . '/order/' . $column_name . '/' . $order_type . '">' . humanize($column_name) . '</a>';
+				$html .= '</th>';
 			}
-				$head.= empty($this->actions) ? '' : '<th colspan="'.$this->getNumberOfActions().'">Azioni</th>';
-			$head.= '</tr>';
-		$head.= '</thead>';
+				$html .= empty($this->actions) ? '' : '<th colspan="'.$this->getNumberOfActions().'">Azioni</th>';
+			$html .= '</tr>';
+		$html .= '</thead>';
 		
-		return $head;
+		return $html;
 	}
 	
 	/** HTML the <tbody>.
 	* @return the HTML body of the table, with all the table content.
 	*/
-	function tbody () {
-		
-		$body = '<tbody>';
-
+	function tbody () {	
+		$html = '<tbody>';
 		foreach ( $this->rows as $row ) {
-
-			$body.= '<tr>';	
-
-			foreach ( $row as $cell ) {
-			
-				$body.= '<td>' . $cell . '</td>';
-			}
-			
+			$html .= '<tr>';	
+			foreach ( $row as $cell ) {		
+				$html .= '<td>' . $cell . '</td>';
+			}		
 			$id = reset($row);
-			$body.= $this->actions($id);
-			
-			$body.= '</tr>';
-		}
-		
-		$body.= '</tbody>';
-		
-		return $body;
-	}
-
-	/** HTML the <tfoot>.
-	* @return the HTML foot of the table, with custom content. In other words, this just wraps a custom content in the footer of a table.
-	*/
-	function tfoot ($content) {
-		$foot = '<tfoot>';
-		$foot.= $content;
-		$foot.= '</tfoot>';
-		return $foot;
-	}
-	
-	/** HTML for navigating through the pages.
-	* @return the navigator.
-	*/	
-	function pagesNavigator () {
-		$html = '<div id=pages class=clearfix>';
-			$pages = $this->getNumberOfPages();
-			
-			if ($_SESSION['page'] > 0) {
-				if ($_SESSION['page'] > 1) {
-					// we are not in the first page, so we print the first navigation arrows
-					$prev_page = $_SESSION['page']-1;
-					$html.= '<a href="' . ROOT . 'backoffice/' . $this->table_name . '/1"> &lt;&lt; </a>';				
-					$html.= '<a href="' . ROOT . 'backoffice/' . $this->table_name . '/' . $prev_page . '"> &lt; </a>';
-				}
-				
-				for ($i=1; $i <= $pages; $i++) {
-				
-					$html.= '<a ';
-					if ($i == $_SESSION['page']) {
-						$html.= 'class="current-page">'.$i.'</a>';
-						continue;
-					}
-					$html.= 'href="' . ROOT . 'backoffice/' . $this->table_name . '/' . $i . '">' . $i . '</a>';
-					
-				}
-				
-				if ($_SESSION['page'] < $pages) {
-					// we are not in the last page, so we print the last navigation arrows
-					$next_page = $_SESSION['page']+1;
-					$html.= '<a href="' . ROOT . 'backoffice/' . $this->table_name . '/' . $next_page . '"> &gt; </a>';
-					$html.= '<a href="' . ROOT . 'backoffice/' . $this->table_name . '/' . $pages . '"> &gt;&gt; </a>';
-				}
-			}
-			
-		$html.= '</div>';
-		return $html;
-	}
-
-	/** Get the number of pages from the result.
-	* @return an integer representing the total number of pages.
-	*/
-	function getNumberOfPages () {
-		return (int) ceil( $this->getNumberOfRowsFromResult() / $this->limit_row_count ); //= totale righe / righe da visualizzare  (arrotondato per eccesso)
-	}
-	
-	/** HTML the informations about pagination, and the navigator, to navigate through pages.
-	* @return navigation's informations.
-	*/
-	function paginate () {
-		
-		$html = '';
-		
-		if ( $this->getNumberOfRowsFromResult() > $this->limit_row_count ) {	
-		
-			$html.= '<span>';
-			$html.= $this->getNumberOfRows();
-			$html.= ' elementi visualizzati (Totale: ';
-			$html.= $this->getNumberOfRowsFromResult();
-			$html.= ')</span>';
-			
-			$html.= '<div>';
-			$html.= 'Pagina ' . $_SESSION['page'] . ' di ' . $this->getNumberOfPages();
-			$html.= $this->pagesNavigator();
-			$html.= '</div>';
-		}
-		
+			$html .= $this->actions($id);		
+			$html .= '</tr>';
+		}	
+		$html .= '</tbody>';	
 		return $html;
 	}
 
@@ -343,15 +255,15 @@ class Table {
 	}
 
 	/** Get the column names from the current table.
-	* @return the column names.
+	* @return an array of strings that represent the column names.
 	*/		
 	function getColumnNames () {
 		$query = "SHOW COLUMNS FROM {$this->table_name}";
 		$columns = $this->db->query($query);
 		while ( $column = $columns->fetchObject() ) {
-			$arr[] = $column->Field;
+			$array[] = $column->Field;
 		}
-		return $arr;
+		return $array;
 	}
 	
 	/** Just a wrapper for a <td>.
@@ -362,10 +274,10 @@ class Table {
 	function cell ($value, $class='') {
 		
 		$html = "<td";
-		$html.= empty($class) ? '' : " class='{$class}'";
-		$html.= ">";
-		$html.= $value;
-		$html.= "</td>";
+		$html .= empty($class) ? '' : " class='{$class}'";
+		$html .= ">";
+		$html .= $value;
+		$html .= "</td>";
 		
 		return $html;
 	}

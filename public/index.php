@@ -1,4 +1,8 @@
-<?php include_once '../library/bootstrap.php'; ?>
+<?php
+// FUSHI CURRENT VERSION: 0.8
+include_once '../library/bootstrap.php';
+header('Content-Type: text/html; charset=UTF-8');
+?>
 <!doctype html>
 
 
@@ -11,7 +15,6 @@
 <!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="it"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
   <title><?=empty($template['title']) ? '' : $template['title'] . ' | '?><?=$settings['site']['name']?></title>
   <meta name="description" content="<?=$template['metaDescription']?>">
@@ -49,8 +52,8 @@
 		/* BEGIN DEBUG
 		echo "<pre>";
 		echo "DEBUG:\n";
-		echo '$_SESSION = '; 		var_dump($_SESSION);			
-		echo '$verbose = ';			var_dump($verbose);		
+		echo '$_SESSION = '; 		var_dump($_SESSION);
+		echo '$verbose = ';			var_dump($verbose);
 		echo '$template_name = '; 	var_dump($template_name);
 		echo '$table_name = ';		var_dump($table_name);
 		echo '$action = ';		 	var_dump($action);

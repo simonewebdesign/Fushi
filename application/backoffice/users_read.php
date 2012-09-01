@@ -15,4 +15,4 @@ include_once BO . 'table_settings_form.php';
 $table = new Table($db, $table_name, $query);
 
 echo $table->table();
-echo $table->paginate();
+include_once BO . 'pagination.php';

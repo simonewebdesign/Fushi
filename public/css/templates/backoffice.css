@@ -89,19 +89,6 @@ td.price {
 			background:red;
 		}
 
-#pages {}
-	#pages a {
-		display:block;
-		width:25px;
-		height:25px;
-		float:left;
-		border:1px solid black;
-		line-height:25px;
-		text-align:center;
-		margin:1px;
-		border-radius:3px;
-	}		
-
 #search input[type="radio"] {
 	margin: 5px 4px 0 15px;
 }

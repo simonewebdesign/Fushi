@@ -1,7 +1,7 @@
 @import url('../modules/navbar.css');
 
 html {
-	
+
 }
 
 body {
@@ -30,7 +30,7 @@ form {}
 	}
 	form input {}
 	form textarea {}
-	
+
 #wrapper {
     width: 1000px;
     margin: 0 auto;
@@ -68,13 +68,35 @@ form {}
 			height:500px;
 			background-color:#338;
 		}
-	
+
 		#outer-footer {
 			text-align:center;
 		}
 			#outer-footer a {
 				font-size:.7em;
 			}
+
+/* Pagination */
+#pages {}
+  #pages ul {
+    list-style:none;
+  }
+    #pages ul li {}
+      #pages ul li a {
+        display:block;
+        width:25px;
+        height:25px;
+        float:left;
+        border:1px solid black;
+        line-height:25px;
+        text-align:center;
+        margin:1px;
+        border-radius:3px;
+      }
+      #pages a.current{
+        color:white;
+      }
+
 /* special */
 ::-moz-selection {}
 ::selection {}

@@ -22,6 +22,6 @@ foreach ($table->rows as $row) {
 }
 
 echo $table->table();
-echo $table->paginate();
 
+include_once BO . 'pagination.php';
 include_once BO . 'search_form.php';

@@ -15,4 +15,4 @@ $actions = array('update' => 'Modifica attributo',
 $table = new Table($db, $table_name, $query, $actions);
 
 echo $table->table();
-echo $table->paginate();
+include_once BO . 'pagination.php';

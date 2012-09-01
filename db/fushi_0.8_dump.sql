@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generato il: Ago 16, 2012 alle 10:53
+-- Generato il: Set 01, 2012 alle 13:01
 -- Versione del server: 5.5.20
 -- Versione PHP: 5.3.10
 
@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `fruits` (
   `isPublished` tinyint(1) NOT NULL DEFAULT '0',
   `isDeleted` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=401 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=371 ;
 
 --
 -- Dump dei dati per la tabella `fruits`
@@ -484,14 +484,14 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   `lastActivity` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=94 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=108 ;
 
 --
 -- Dump dei dati per la tabella `sessions`
 --
 
 INSERT INTO `sessions` (`_id`, `user_id`, `sessionId`, `ipAddress`, `userAgent`, `entryDate`, `lastActivity`) VALUES
-(93, 0, 'smrs81ohhgbbsikee4vcvg0u40', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:14.0) Gecko/20100101 Firefox/14.0.1', '2012-08-16 12:01:50', 1345112789);
+(107, 0, 'fa08fi388id3g9dvrbl2eje8n3', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:14.0) Gecko/20100101 Firefox/14.0.1', '2012-09-01 13:02:10', 1346498393);
 
 -- --------------------------------------------------------
 
@@ -538,19 +538,20 @@ CREATE TABLE IF NOT EXISTS `templates` (
   `metaKeywords` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`_id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Dump dei dati per la tabella `templates`
 --
 
 INSERT INTO `templates` (`_id`, `name`, `title`, `h1`, `h2`, `metaDescription`, `metaKeywords`) VALUES
-(1, 'default', '', 'Welcome to Fushi!', 'Hope you enjoy it.', 'This is the default meta description.', 'fushi, default, keywords'),
+(1, 'default', '', 'Welcome to our Website!', 'This is our Slogan.', 'This is the default meta description.', 'fushi, default, keywords'),
 (3, 'backoffice', '', 'Gestionale', '', '', ''),
 (5, 'chi-siamo', 'Chi Siamo', 'Chi Siamo', 'Ecco chi siamo.', 'Scopri ora chi siamo.', 'chi, siamo'),
 (6, 'dove-siamo', 'Dove Siamo', 'Dove Siamo', 'Ecco dove siamo.', 'dove siamo.', 'dove, siamo'),
 (7, 'servizi', 'Servizi', 'Servizi', 'Ecco i nostri servizi.', 'Descrizione', 'i, nostri, servizi'),
-(8, 'contatti', 'Contatti', 'Contattaci', 'Compila il modulo.', 'Contattaci', 'contatti');
+(8, 'contatti', 'Contatti', 'Contattaci', 'Compila il modulo.', 'Contattaci', 'contatti'),
+(10, 'prodotti', 'Products', 'Products', 'Here''s a list of our products.', 'description', 'keywords');
 
 -- --------------------------------------------------------
 

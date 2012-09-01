@@ -8,4 +8,4 @@ $actions = array('update' => 'Modifica nome attributo',
 $table = new Table($db, $table_name, false, $actions);
 
 echo $table->table();
-echo $table->paginate();
+include_once BO . 'pagination.php';
