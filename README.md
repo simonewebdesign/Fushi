@@ -43,42 +43,42 @@ Fushi has a very simple but powerful built-in templating system.
 
 In alphabetical order and in a tree-structured way, I'll proceed describing the folders and their content.
 
-- **application** - all files relative to the application itself.
-    - **backoffice** - backend interface files.
-    - **includes** - files that can be included inside templates.
+- **application** all files relative to the application itself.
+    - **backoffice** backend interface files.
+    - **includes** files that can be included inside templates.
         - **forms**
 	- **galleries**
 	- **lists**
 	- **menus**
-    - **templates** - all templates (backoffice included).
-- **config** - configuration files (only constants here, *not* variables).
-- **db** - database dump (*.sql)
-- **library** - The core of Fushi.
+    - **templates** all templates (backoffice included).
+- **config** configuration files (only constants here, *not* variables).
+- **db** database dump (*.sql)
+- **library** The core of Fushi.
     - **classes**
     - **functions**
     - **session**
-- **public** - the only folder publicly accessible.
+- **public** the only folder publicly accessible.
     - **css**
-        - **classes** - css classes, usually reusable many times inside your app.
-	- **modules** - css modules, (unique and independent parts of your app).
-	- **templates** - css relative to single templates.
-    - **fonts** - custom fonts (I personally use fontsquirrel.com)
-    - **img** - all images.
-    - **icons** - only sweetieplus by default.
+        - **classes** css classes, usually reusable many times inside your app.
+	- **modules** css modules, (unique and independent parts of your app).
+	- **templates** css relative to single templates.
+    - **fonts** custom fonts (I personally use fontsquirrel.com)
+    - **img** all images.
+    - **icons** only sweetieplus by default.
         - **sweetieplus**
-    - **js** -  all the JavaScript scripts.
-        - **libs** - all the needed libraries (only jQuery by default).
-    - **media** - multimedia files.
+    - **js** all the JavaScript scripts.
+        - **libs** all the needed libraries (only jQuery by default).
+    - **media** multimedia files.
         - **pdf**
 	- **video**
-    - **static** - static HTML docs.
-        - **errordocs** - HTTP error files (403 Forbidden, 404 Not Found, 500 Internal Server Error etc).
+    - **static** static HTML docs.
+        - **errordocs** HTTP error files (403 Forbidden, 404 Not Found, 500 Internal Server Error etc).
     - **plugins**
-        - **tinymce** - the TinyMCE editor, needed by backoffice.
-	- **galleria** - jQuery galleria plugin.
-	- **fancybox** - just another freaking jQuery plugin.
-    - **scripts** - any script that could reveal useful.	
-    - **tmp** - unused.
-        - **cache** - unused.
-	- **logs** - unused.
-	- **sessions** - unused.
+        - **tinymce** the TinyMCE editor, needed by backoffice.
+	- **galleria** jQuery galleria plugin.
+	- **fancybox** just another freaking jQuery plugin.
+    - **scripts** any script that could reveal useful.	
+    - **tmp** unused.
+        - **cache** unused.
+	- **logs** unused.
+	- **sessions** unused.
