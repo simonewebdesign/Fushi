@@ -47,9 +47,9 @@ In alphabetical order and in a tree-structured way, I'll proceed describing the 
     - **backoffice** backend interface files.
     - **includes** files that can be included inside templates.
         - **forms**
-	- **galleries**
-	- **lists**
-	- **menus**
+        - **galleries**
+        - **lists**
+        - **menus**
     - **templates** all templates (backoffice included).
 - **config** configuration files (only constants here, *not* variables).
 - **db** database dump (*.sql)
@@ -60,8 +60,8 @@ In alphabetical order and in a tree-structured way, I'll proceed describing the 
 - **public** the only folder publicly accessible.
     - **css**
         - **classes** css classes, usually reusable many times inside your app.
-	- **modules** css modules, (unique and independent parts of your app).
-	- **templates** css relative to single templates.
+        - **modules** css modules, (unique and independent parts of your app).
+        - **templates** css relative to single templates.
     - **fonts** custom fonts (I personally use fontsquirrel.com)
     - **img** all images.
     - **icons** only sweetieplus by default.
@@ -70,15 +70,15 @@ In alphabetical order and in a tree-structured way, I'll proceed describing the 
         - **libs** all the needed libraries (only jQuery by default).
     - **media** multimedia files.
         - **pdf**
-	- **video**
+        - **video**
     - **static** static HTML docs.
         - **errordocs** HTTP error files (403 Forbidden, 404 Not Found, 500 Internal Server Error etc).
     - **plugins**
         - **tinymce** the TinyMCE editor, needed by backoffice.
-	- **galleria** jQuery galleria plugin.
-	- **fancybox** just another freaking jQuery plugin.
+        - **galleria** jQuery galleria plugin.
+        - **fancybox** just another freaking jQuery plugin.
     - **scripts** any script that could reveal useful.	
     - **tmp** unused.
         - **cache** unused.
-	- **logs** unused.
-	- **sessions** unused.
+        - **logs** unused.
+        - **sessions** unused.
