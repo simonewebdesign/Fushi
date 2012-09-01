@@ -47,20 +47,16 @@ In alphabetical order and in a tree-structured way, I'll proceed describing the 
     - **backoffice** - backend interface files.
     - **includes** - files that can be included inside templates.
         - **forms**
-	      - **galleries**
-	      - **lists**
-	      - **menus**
+	- **galleries**
+	- **lists**
+	- **menus**
     - **templates** - all templates (backoffice included).
-
 - **config** - configuration files (only constants here, *not* variables).
-
 - **db** - database dump (*.sql)
-
 - **library** - The core of Fushi.
     - **classes**
     - **functions**
     - **session**
-    
 - **public** - the only folder publicly accessible.
     - **css**
         - **classes** - css classes, usually reusable many times inside your app.
@@ -69,7 +65,7 @@ In alphabetical order and in a tree-structured way, I'll proceed describing the 
     - **fonts** - custom fonts (I personally use fontsquirrel.com)
     - **img** - all images.
     - **icons** - only sweetieplus by default.
-	      - **sweetieplus**
+        - **sweetieplus**
     - **js** -  all the JavaScript scripts.
         - **libs** - all the needed libraries (only jQuery by default).
     - **media** - multimedia files.
@@ -79,8 +75,8 @@ In alphabetical order and in a tree-structured way, I'll proceed describing the 
         - **errordocs** - HTTP error files (403 Forbidden, 404 Not Found, 500 Internal Server Error etc).
     - **plugins**
         - **tinymce** - the TinyMCE editor, needed by backoffice.
-	      - **galleria** - jQuery galleria plugin.
-	      - **fancybox** - just another freaking jQuery plugin.
+	- **galleria** - jQuery galleria plugin.
+	- **fancybox** - just another freaking jQuery plugin.
     - **scripts** - any script that could reveal useful.	
     - **tmp** - unused.
         - **cache** - unused.
