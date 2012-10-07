@@ -14,12 +14,16 @@ It has a very simple but powerful built-in templating system, as well as a prett
 
 Features
 --------
+
 - Modular, scalable and SEO friendly CSS frontend engine
-- Helper classes and functions for backend administration of database tables
+- Helper classes and functions for managing database tables
 - Helper class for pagination
-- A bunch of functions for a variety of tasks
+- A whole bunch of functions for a variety of tasks (see `library/functions/`)
 - SEO friendly URL rewrites
 - A powerful and secure session engine
+- Automagically add a new template that inherits CSS from the default one
+- User-friendly backoffice UI
+- gzip compression support
 
 
 Requirements
@@ -34,11 +38,13 @@ In order to run Fushi, you just need:
 Getting started
 ---------------
 
-1. First of all, upload everything in the root of your web server.
-2. Then go to `/db` folder and create a new database with the provided MySQL dump.
-3. When you're done, go to `/config` folder and edit `database.php`. You'll also need to edit `paths.php` in the same folder.
+1. Upload everything in the root of your web server.
+2. Open `/db` folder and create a new database with the provided MySQL dump.
+3. Go to `/config` folder and edit `database.php`. You'll also need to edit `paths.php` in the same folder.
 
 If you have edited the above files properly, just surf to the root of your website and you should be able to see the home page.
+
+**Having trouble during installation? [Please let me know](https://github.com/simonewebdesign/Fushi/issues/new).**
 
 
 Documentation
@@ -93,16 +99,16 @@ In alphabetical order and in a tree-structured way, I'll proceed describing the 
 
 In the most important file, `bootstrap.php`, are declared some fundamental variables:
 
-- **$get** is the $_GET array sanitized. It actually discards every variable in the URL that contains specials characters. It only accepts numbers, letters, hyphens and underscores.
-- **$template_name** is the name of the current template, getted from the URL. It equals $get[0].
+- **$get** is the `$_GET` array sanitized. It actually discards every variable in the URL that contains specials characters. It only accepts numbers, letters, hyphens and underscores.
+- **$template_name** is the name of the current template, getted from the URL. It equals `$get[0]`.
 - **$template** is an array taken from the database, containing the current template data:
-    - $template['_id']
-    - $template['name']
-    - $template['title']
-    - $template['h1']
-    - $template['h2']
-    - $template['metaDescription']
-    - $template['metaKeywords']
+    - `$template['_id']`
+    - `$template['name']`
+    - `$template['title']`
+    - `$template['h1']`
+    - `$template['h2']`
+    - `$template['metaDescription']`
+    - `$template['metaKeywords']`
 - **$css** contains the links to the main stylesheets: `style.css` and `templates/$template_name.css` (the current template's CSS).
 - *Backoffice only:*
     - **$table_name** 
@@ -116,19 +122,19 @@ The frontend engine is based upon the [HTML5 Boilerplate](https://github.com/h5b
 
 You're completely free to organize and manage your CSS as you wish: however I suggest you trying to maintain your structure as modular as possible. You can always use `@import url('style.css');` but this is discouraged. Use `application/boot.php` to arbitrarily import:
 
-- Classes from 	/classes;
-- Modules from 	/modules;
-- Templates from 	/templates.
+- Classes from 	`public/css/classes/`;
+- Modules from 	`public/css/modules/`;
+- Templates from 	`public/css/templates/`.
 
 So remember that when your web application has a modular piece (i.e. an header or footer), you can declare it as *module* and subsequently recall it in a specific template; you can even create new templates based on the concept of inheritance!
 
 These "non-semantic helper classes" are available:
 
-- .ir
-- .hidden
-- .visuallyhidden
-- .invisible
-- .clearfix
+- `.ir`
+- `.hidden`
+- `.visuallyhidden`
+- `.invisible`
+- `.clearfix`
 
 For the explaining I recommend you reading the h5bp documentation: http://html5boilerplate.com/docs
 
@@ -138,12 +144,14 @@ The classes `.left` and `.right` just make block elements float to left or right
 ### JavaScript
 
 Just two words on JavaScript: `script.js` is the main JS file, that loads automatically in every page.
-Besides that, you're free to load all *.js* files you want. If you need a specific library different than jQuery, add it in `public/js/libs/` folder. If you need a jQuery plugin, add it in `public/plugins/` folder.
+Besides that, you're free to load all *.js* files you want.
+
+[jQuery](http://jquery.com) is the Fushi's default library; if you need a different one, add it in `public/js/libs/` folder. If you need a jQuery plugin, add it in `public/plugins/` folder.
 
 
 ### Ajax
 
-The `public/js/ajax.js` file is responsible for managing _all Ajax requests_, and strictly collaborates with `public/ajax.php`.
+The `public/js/ajax.js` file is responsible for managing **all Ajax requests**, and strictly collaborates with `public/ajax.php`.
 
 A detailed explaining of an Ajax request in Fushi:
 
@@ -185,13 +193,18 @@ As a convention, the table names must always be in plural form.
 FAQ (Frequently Asked Questions)
 --------------------------------
 
-Q: I've uploaded every single file in the root of my web server, but Fushi throws weird errors like *unexpected T_FUNCTION* ...
-A: Make sure you have uploaded everything in binary mode.
+**Q:** I've uploaded every single file in the root of my web server, but Fushi throws weird errors like *unexpected T_FUNCTION*...
+
+**A:** Make sure you have uploaded everything in binary mode.
+
+
 
 **Please [open a new issue](https://github.com/simonewebdesign/Fushi/issues/new) if you have a question.**
 
 
 
-This content is released under the [MIT License](https://github.com/simonewebdesign/Fushi/blob/master/LICENSE.md).
-
 Thank you for using Fushi! You are awesome!
+
+
+
+This content is released under the [MIT License](https://github.com/simonewebdesign/Fushi/blob/master/LICENSE.md).
