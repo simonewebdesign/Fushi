@@ -109,7 +109,7 @@ In the most important file, `bootstrap.php`, are declared some fundamental varia
     - **$action**
     - **$id**
 
-    
+
 ### Frontend (CSS)
 
 The frontend engine is based upon the [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate) (v3.0.2, released on feb 19, 2012).
