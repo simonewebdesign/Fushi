@@ -3,7 +3,7 @@
 define('CREDITS','<!--
 
 + * * * * * * * * * * * * * * * * * +
-*    Proudly powered by Playpc.it   *
+*         Your credits here         *
 + * * * * * * * * * * * * * * * * * +
 
 -->

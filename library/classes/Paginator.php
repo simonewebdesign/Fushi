@@ -1,10 +1,10 @@
 <?php
 /** Paginator.php
  * A convenient class to paginate an arbitrary number of elements.
- * Required parameters: 
+ * Required parameters:
     @param $elements the total number of elements to paginate.
     @param $current_page the current page.
- * Optional parameters: 
+ * Optional parameters:
     @param $elements_per_page number of desired elements per page.
  * For the paginateURL() function is also required the URL, that must respect this format: http://example.com/elements.php?page=$1 (where $1 is the placeholder for page).
  * @version  1.2 - 28/08/2012
@@ -26,7 +26,7 @@ class Paginator {
 
   function __construct( $elements, $elements_per_page=20 ) {
     $this->elements = $elements;
-    $this->elements_per_page = $elements_per_page; 
+    $this->elements_per_page = $elements_per_page;
   }
 
   function setPage($current_page=1) {
@@ -36,7 +36,7 @@ class Paginator {
     $this->pages =  (int) ceil( $this->elements / $this->elements_per_page );
     $this->displayed_elements = $this->page == $this->pages ? $this->elements % $this->elements_per_page : $this->elements_per_page;
   }
-  
+
   function getPage() {
     return $this->page;
   }
@@ -48,7 +48,7 @@ class Paginator {
   }
   function getElements() {
     return $this->elements;
-  }  
+  }
   function getElementsPerPage() {
     return $this->elements_per_page;
   }
@@ -61,9 +61,9 @@ class Paginator {
   function getElementsTo() {
     return $this->offset + $this->displayed_elements;
   }
-  
+
   function paginateURL($url) {
-    /* 
+    /*
     */
     $html = '<div id="pages">';
       $html .= '<ul class="clearfix">';

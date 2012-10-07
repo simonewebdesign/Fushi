@@ -1,10 +1,10 @@
 <?php
 
-/* 
+/*
 * @param haystack the full string.
 * @param needle the substring.
 * Usage example:
-* echo startsWith('albero','alb'); 
+* echo startsWith('albero','alb');
 */
 
 function startsWith ($haystack, $needle) {

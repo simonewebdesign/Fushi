@@ -2,11 +2,11 @@
 
 <?php
 
-$query = "SELECT 
-`_id` AS `ID`, 
-`name` AS `nome`, 
-`price` AS `prezzo`, 
-date_format(`creationDate`, '". DATE_FORMAT_DATETIME ."') AS `data_di_creazione`, 
+$query = "SELECT
+`_id` AS `ID`,
+`name` AS `nome`,
+`price` AS `prezzo`,
+date_format(`creationDate`, '". DATE_FORMAT_DATETIME ."') AS `data_di_creazione`,
 `isPublished` AS `pubblicato`
 FROM `fruits`
 WHERE `isDeleted`=0";

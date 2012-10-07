@@ -5,7 +5,7 @@ phpinfo();
 //*/
 
 /*
-* Uncomment the following rules while in PRODUCTION environment. 
+* Uncomment the following rules while in PRODUCTION environment.
 * This usually isn't needed since  * there are php_flags in .htaccess. Also check if your hosting service allows php.ini editing.
 */
 
@@ -19,7 +19,7 @@ setlocale(LC_ALL, "", "it", "it_IT", "IT", "it-IT", "IT.UTF-8", "it_IT.UTF-8", "
 
 
 /* LIBRARY
-* Including all constants, classes and functions. 
+* Including all constants, classes and functions.
 * I can't include variables: they won't be available since scope is restricted inside the function.
 */
 function include_folder ($folder) {
@@ -68,18 +68,18 @@ if ( $template_name ) {
 	// fetching templates looking for the current one
 	$templates_db = $db->query("SELECT * FROM templates");
 	$found = false;
-	
+
 	while ( !$found && ( $template = $templates_db->fetch(PDO::FETCH_ASSOC) ) ) {
-		
+
 		if ( $template_name == $template['name'] ) {
 			// FOUND!
 			$found = true;
 		}
 	}
-	
+
 	if ( !$found || $template_name == 'default') {
 		$verbose[] = "Template not found: $template_name";
-		$verbose[] = "Sending header Status: 404 Not Found...";		
+		$verbose[] = "Sending header Status: 404 Not Found...";
 		header('HTTP/1.1 404 Not Found');
 		$verbose[] = "Header sent.";
 		$verbose[] = "Serving 404 error page...";
@@ -87,11 +87,11 @@ if ( $template_name ) {
 		$verbose[] = "die.";
 		die;
 	}
-	
+
 } else {
 	// loading the default template. It's the first one in db
 	$template_db = $db->query("SELECT * FROM templates WHERE _id = 1 LIMIT 1");
-	
+
 	if ( $template_db->rowCount() > 0 ) {
 		$template = $template_db->fetch(PDO::FETCH_ASSOC);
 	}else{

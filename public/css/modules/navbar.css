@@ -3,7 +3,7 @@
 		list-style: none outside none;
 		padding: 0;
 		margin:0;
-		
+
 		background: #555;
 	}
 		#navbar ul li {
@@ -13,10 +13,10 @@
 			#navbar ul li:not(:last-child) {
 				border-right: 1px solid white;
 			}
-			
+
 			#navbar ul li:hover {
 			}
-			
+
 			#navbar ul li a {
 				display:block;
 				height:32px;
@@ -30,13 +30,13 @@
 				#navbar ul li a:active {
 					background:#888;
 				}
-				
+
 				#navbar ul li a.current {
 					background:#888;
 				}
 					#navbar ul li a.current:hover {
-						
-					}		
+
+					}
 					#navbar ul li a.current:active {
-						
+
 					}

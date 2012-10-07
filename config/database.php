@@ -15,7 +15,7 @@ define('PASSWORD', '');
 
 //* LOCALHOST database settings
 define('DBNAME',  'fushi');
-define('HOSTNAME','');
-define('USERNAME','');
+define('HOSTNAME','localhost');
+define('USERNAME','root');
 define('PASSWORD','');
 //*/

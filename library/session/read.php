@@ -1,7 +1,7 @@
 <?php
 
 /* BEGIN get the $session from db */
-$verbose[] = "(session_read.php) looking in db for a record with the same id of the current session...";	
+$verbose[] = "(session_read.php) looking in db for a record with the same id of the current session...";
 $look_for_session_query = "SELECT `_id`, 	`user_id`, 	`sessionId`, 	`ipAddress`, 	`userAgent`, 	date_format(`entryDate`, '".DATE_FORMAT_TIME."') AS `entryDate`, 	`lastActivity` ";
 $look_for_session_query.= "FROM sessions ";
 $look_for_session_query.= "WHERE sessionId = '".session_id()."' ";

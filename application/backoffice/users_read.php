@@ -2,9 +2,9 @@
 
 <?php
 
-$query = "SELECT 
-`_id` AS `ID`, 
-`name` AS `nome`, 
+$query = "SELECT
+`_id` AS `ID`,
+`name` AS `nome`,
 `surname` AS `cognome`,
 `email` AS `indirizzo_email`,
 date_format(`registrationDate`, '". DATE_FORMAT_DATETIME ."') AS `data_di_registrazione`

@@ -23,8 +23,8 @@ function toAscii ($str, $replace=array("'"), $delimiter='-') {
 
 	while ( endsWith($clean, '-') ) {
 		$clean = substr($clean, 0, -1);
-	}	
-	
+	}
+
 	return $clean;
 }
 

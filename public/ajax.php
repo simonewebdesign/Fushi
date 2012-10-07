@@ -1,6 +1,6 @@
 <?php
 
-/* Da qui passano tutte le richieste ajax. 
+/* Da qui passano tutte le richieste ajax.
 Questa pagina serve solamente ad includere la pagina appropriata a seconda di quale richiesta ajax è stata effettuata.
 Ci penserà la pagina inclusa a gestire la richiesta, pertanto non c'è bisogno di usare db o altro: il bootstrap qui non è necessario.
 */
@@ -14,7 +14,7 @@ if ($href) {
 	/* debug *
 	echo "the url from _POST: "; var_dump($href);
 	//*/
-	
+
 	/* removing ROOT from $href, just to avoid issues while in environments different than localhost. */
 	$replacement = '';
 	$start = 0;

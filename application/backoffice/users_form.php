@@ -14,7 +14,7 @@ if ( $action == 'update' ) {
 
 	include_once CFG . 'database.php';
 	include_once LIB . 'db.php';
-	
+
 	$object_db = $db->query("SELECT * FROM `$table_name` WHERE `_id`={$id}");
 	$object = $object_db->fetchObject();
 	/* debug
@@ -27,9 +27,9 @@ if ( $action == 'update' ) {
 <form method=POST action="<?=ROOT?>backoffice/<?=$table_name?>">
 
 	<fieldset>
-	
-		<!--<legend></legend>-->		
-		
+
+		<!--<legend></legend>-->
+
 		<p class=clearfix>
 			<label for=name>Nome</label>
 			<input id=name name=name type=text value="<?=isset($object->name) ? $object->name : ''?>" maxlength=50>
@@ -39,7 +39,7 @@ if ( $action == 'update' ) {
 			<label for=surname>Cognome</label>
 			<input id=surname name=surname type=text value="<?=isset($object->surname) ? $object->surname : ''?>" maxlength=50>
 		</p>
-		
+
 		<p class=clearfix>
 			<label for=email>Email</label>
 			<input id=email name=email type=email required value="<?=isset($object->email) ? $object->email : ''?>" size=30 maxlength=100>
@@ -59,20 +59,20 @@ if ( $action == 'update' ) {
 			<label for=cap>CAP</label>
 			<input id=cap name=cap type=text value="<?=isset($object->cap) ? $object->cap : ''?>" size=5 maxlength=5>
 		</p>
-		
+
 		<p class=clearfix>
 			<label for=city>Provincia</label>
 			<input id=city name=city type=text value="<?=isset($object->city) ? $object->city : ''?>" maxlength=50>
 		</p>
-		
+
 		<p>
 			<input name=submit type=submit value=Invio>
 		</p>
-		
+
 	</fieldset>
-	
+
 	<!-- hidden fields -->
 	<input type=hidden name=action value=<?=$action?>>
 	<input type=hidden name=id value=<?=$id?>>
-	
+
 </form>

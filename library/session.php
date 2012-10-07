@@ -26,9 +26,9 @@ if ( isset( $_COOKIE[session_name()] ) ) {
 	$verbose[] = "(session.php) a cookie named ".session_name()." exists. (value=".$_COOKIE[session_name()].")";
 	include LIB . 'session/read.php';
 	include LIB . 'session/update.php';
-	
+
 } else {
-	
+
 	$verbose[] = "(session.php) a cookie named ".session_name()." does NOT exist.";
 	include LIB . 'session/create.php';
 	include LIB . 'session/read.php';

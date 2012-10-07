@@ -12,7 +12,7 @@ define('ONE_MINUTE',60);  // one minute in seconds
 
 
 // REFERENCE: http://dev.mysql.com/doc/refman/5.5/en/date-and-time-functions.html#function_date-format
-define('DATE_FORMAT_DATETIME', '%d/%m/%Y %H:%i'); // prints: 25/04/2012 16:30 
+define('DATE_FORMAT_DATETIME', '%d/%m/%Y %H:%i'); // prints: 25/04/2012 16:30
 define('DATE_FORMAT_DATE', '%d/%m/%Y'); // prints: 25/04/2012
 define('DATE_FORMAT_TIME', '%H:%i'); // prints: 16:30
 

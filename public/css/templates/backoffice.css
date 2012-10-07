@@ -24,7 +24,7 @@ a.action, .icon {
 	.preview {	background-image:url('../../img/icons/sweetieplus/page-forum-16-ns.png') !important; }
 	.view {		background-image:url('../../img/icons/sweetieplus/clipboard-eye-16-ns.png') !important; }
 	.send {		background-image:url('../../img/icons/sweetieplus/arrow-right-16-ns.png') !important; }
-	.add {		background-image:url('../../img/icons/sweetieplus/badge-circle-plus-16-ns.png') !important; }	
+	.add {		background-image:url('../../img/icons/sweetieplus/badge-circle-plus-16-ns.png') !important; }
 	.error {		background-image:url('../../img/icons/sweetieplus/warning-16-ns.png') !important; }
 	.asc {		background-image:url('../../img/icons/sweetieplus/arrow-up-16-ns.png') !important; }
 	.desc {		background-image:url('../../img/icons/sweetieplus/arrow-down-16-ns.png') !important; }
@@ -38,7 +38,7 @@ form {}
 		form fieldset legend {
 			padding:0 10px;
 		}
-		
+
 	form input,
 	form select,
 	form textarea,
@@ -46,12 +46,12 @@ form {}
 		display:block;
 		float:left;
 	}
-	
+
 	form label {
 		width:200px;
 		padding:0 10px;
 	}
-	
+
 
 td.price {
 	text-align:right;
@@ -66,20 +66,20 @@ td.price {
 		position:absolute;
 		top:3px;
 		right:3px;
-		
+
 		opacity:.5;
-		
+
 		width:16px;
 		height:16px;
 
-		line-height:14px;		
+		line-height:14px;
 		/*font-size:16px;*/
 		text-align:center;
 		text-shadow:0 0 1px white;
 		color:black;
-		
+
 		border-radius:8px;
-		
+
 		background:white;
 	}
 		#response:hover #response-close:hover {
@@ -92,7 +92,7 @@ td.price {
 #search input[type="radio"] {
 	margin: 5px 4px 0 15px;
 }
-	
+
 /* end standard styles - don't delete this! */
 
 body {
@@ -110,7 +110,7 @@ a:hover {
 table {
 	width:100%;
 	margin:0 auto;
-	
+
 }
 	table tr:nth-child(even) {
 		background-color:#333;
@@ -119,7 +119,7 @@ table {
 		table tr td {
 			/*text-align:left;*/
 		}
-	
+
 		table tbody tr:hover {
 			background-color:#d33/*azzurro*/;
 		}
@@ -140,7 +140,7 @@ div#table-pages {
 	}
 
 
-#response {	
+#response {
 	background: #222222;
 	background: -moz-linear-gradient(top, #222222 0%, #333333 50%, #222222 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#222222), color-stop(50%,#333333), color-stop(100%,#222222));
@@ -149,7 +149,7 @@ div#table-pages {
 	background: -ms-linear-gradient(top, #222222 0%,#333333 50%,#222222 100%);
 	background: linear-gradient(top, #222222 0%,#333333 50%,#222222 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#222222',GradientType=0 );
-	
+
 	border: 1px solid #888;
 	padding:0 16px;
 	border-radius:4px;

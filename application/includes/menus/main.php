@@ -12,9 +12,9 @@ $menu = array(
 echo "<ul class=clearfix>";
 
 foreach ( $menu as $menu_slug => $menu_entry ) {
-	
+
 	$current = $menu_slug == $template_name ?: false;
-	
+
 	echo "<li>";
 		if ($current) { $menu_slug.= '#'; }
 		echo '<a href="' . ROOT . $menu_slug . '"';

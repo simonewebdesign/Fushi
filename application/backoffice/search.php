@@ -5,12 +5,12 @@ if ( isset($_POST['submit_search']) ) {
 	$field = isset($_POST['field']) ? trim($_POST['field']) : false;
 
 	if ( !empty($field) ) {
-		
+
 		$operator 	= isset($_POST['operator']) ? $_POST['operator'] : 'OR';
-    
+
 		$query.= " HAVING ";
 		$_count = 0;
-	
+
 		foreach ($_POST as $condition => $value) {
 			if ( !empty($value) ) {
 				switch ($condition) {
@@ -22,27 +22,27 @@ if ( isset($_POST['submit_search']) ) {
 					case 'lower':
 						$query.= $_count > 0 ? " $operator " : '';
 						$query.= "`$field` < $value";
-						$_count++;						
+						$_count++;
 						break;
 					case 'equals':
 						$query.= $_count > 0 ? " $operator " : '';
 						$query.= "`$field` = '$value'";
-						$_count++;						
+						$_count++;
 						break;
 					case 'contains':
 						$query.= $_count > 0 ? " $operator " : '';
 						$query.= "`$field` LIKE '%$value%'";
-						$_count++;						
+						$_count++;
 						break;
 					case 'starts':
 						$query.= $_count > 0 ? " $operator " : '';
 						$query.= "`$field` LIKE '$value%'";
-						$_count++;						
+						$_count++;
 						break;
 					case 'ends':
-						$query.= $_count > 0 ? " $operator " : '';					
+						$query.= $_count > 0 ? " $operator " : '';
 						$query.= "`$field` LIKE '%$value'";
-						$_count++;						
+						$_count++;
 						break;
 				}
 				/* DEBUG

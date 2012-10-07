@@ -5,14 +5,14 @@
 <?php
 
 if ( isset($_POST['submit']) ) {
-	
+
 	// hidden fields
 	$action			= $_POST['action'];
 	$_id 			= isset($_POST['id']) ? $_POST['id'] : 0;
-	
+
 	// fields
 	$name 			= isset($_POST['name']) ? trim($_POST['name']) : '';
-	
+
 	// binding SQL data
 	$sql_data = array(
 		'_id'			=> $_id,
@@ -21,11 +21,11 @@ if ( isset($_POST['submit']) ) {
 
 	if ( $action == 'create' ) {
 		// INSERT
-		$query_string = "INSERT INTO `$table_name` (`name`) VALUES (:name)";	
+		$query_string = "INSERT INTO `$table_name` (`name`) VALUES (:name)";
 		$positive = $create_positive;
 		$negative = $create_negative;
 		unset($sql_data['_id']);
-	} else	
+	} else
 	if ( $action == 'update' ) {
 		// UPDATE
 		$query_string = "UPDATE `$table_name` SET `name`=:name WHERE `_id`=:_id";
@@ -39,7 +39,7 @@ if ( isset($_POST['submit']) ) {
 
 	// executing statement
 	$statement = $db->prepare($query_string);
-	
+
 	if ( $statement->execute($sql_data) ) {
 		$response = $positive;
 	} else {

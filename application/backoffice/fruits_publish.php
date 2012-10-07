@@ -15,9 +15,9 @@ $statement = $db->prepare($query);
 if ( $statement->execute($sql_data) ) {
 
 	if ( $bool ) {
-		echo "<span class='icon true'>L'oggetto è stato pubblicato. (ID=$id)</span>";	
+		echo "<span class='icon true'>L'oggetto è stato pubblicato. (ID=$id)</span>";
 	} else {
-		echo "<span class='icon false'>L'oggetto è stato nascosto. (ID=$id)</span>";	
+		echo "<span class='icon false'>L'oggetto è stato nascosto. (ID=$id)</span>";
 	}
 
 } else {

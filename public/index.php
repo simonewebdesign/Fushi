@@ -1,5 +1,4 @@
 <?php
-// FUSHI CURRENT VERSION: 0.8
 include_once '../library/bootstrap.php';
 header('Content-Type: text/html; charset=UTF-8');
 ?>
@@ -15,7 +14,7 @@ header('Content-Type: text/html; charset=UTF-8');
 <!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="it"> <!--<![endif]-->
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title><?=empty($template['title']) ? '' : $template['title'] . ' | '?><?=$settings['site']['name']?></title>
   <meta name="description" content="<?=$template['metaDescription']?>">
   <meta name="keywords"	content="<?=$template['metaKeywords']?>">
@@ -32,22 +31,22 @@ header('Content-Type: text/html; charset=UTF-8');
 	  <div id=header>
 		<h1><a href=<?=ROOT?>><?=$settings['site']['name']?></a></h1>
 	  </div>
-	  
+
 	  <div id=navbar role=navigation>
 		<?php include_once INC . 'menus/main.php' ?>
 	  </div>
-	  
+
 	  <div id=main class=clearfix>
 	  <?php include_once "../application/templates/{$template['name']}.php" ?>
 	  </div>
-	  
+
 	  <div id=footer role=contentinfo>
 		Copyleft &copy; <?=YEAR . ' ' . $settings['site']['name']?>. All rights reversed. Tel: 123 4567890 - Fax: 123 4567890
 	  </div>
-	  
+
 	  <div id=outer-footer>
 		<a href="http://playpc.it">Powered by Playpc.it</a>
-		
+
 		<?php
 		/* BEGIN DEBUG
 		echo "<pre>";
@@ -59,20 +58,20 @@ header('Content-Type: text/html; charset=UTF-8');
 		echo '$action = ';		 	var_dump($action);
 		echo '$id = ';				var_dump($id);
 		echo '$session = ';			var_dump($session);
-		echo '$user = ';			var_dump($user);	
+		echo '$user = ';			var_dump($user);
 		echo '$_GET = ';			var_dump($_GET);
-		echo '$get = ';				var_dump($get);		
+		echo '$get = ';				var_dump($get);
 		echo '$_POST = ';			var_dump($_POST);
 		echo "</pre>";
 		//* END DEBUG */
-		?>		
-		
+		?>
+
 	  </div>
-  
+
   </div>
 
   <!-- End of Content /// JavaScript Begin --->
-  
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
@@ -80,12 +79,12 @@ header('Content-Type: text/html; charset=UTF-8');
 	var ROOT = '<?=ROOT?>';
 	var ABSOLUTE_ROOT = '<?=ABSOLUTE_ROOT?>';
   </script>
-  
+
   <!-- <script src="<?=ROOT?>js/script.js"></script> -->
-  
+
   <?php if ( $template['name'] == 'backoffice' ) { ?>
   <script src="<?=ROOT?>js/ajax.js"></script>
-  <script src="<?=ROOT?>js/backoffice.js"></script> 
+  <script src="<?=ROOT?>js/backoffice.js"></script>
   <?php } ?>
 
   <script>
@@ -94,6 +93,6 @@ header('Content-Type: text/html; charset=UTF-8');
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
-  
+
 </body>
 </html>

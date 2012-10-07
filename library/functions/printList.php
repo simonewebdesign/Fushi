@@ -1,7 +1,7 @@
 <?php
 
 /* printList() - developed by http://simonewebdesign.it
-This functions transforms a tree-structured Array in a HTML list. 
+This functions transforms a tree-structured Array in a HTML list.
 
 // USAGE EXAMPLE:
 
@@ -14,9 +14,9 @@ $menu = array(
 	array( 'title' => 'prodotti',
 		   'child' => array()
 		),
-		
+
 	array( 'title' => 'servizi',
-		   'child' => array( 
+		   'child' => array(
 							array( 'title' => 'riparazione pc',
 								   'child' => array(
 												array( 'title' => 'pc nuovi',
@@ -24,7 +24,7 @@ $menu = array(
 													),
 												array( 'title' => 'pc usati',
 													   'child' => array()
-													),				
+													),
 												),
 								),
 							array( 'title' => 'vendita pc',
@@ -34,7 +34,7 @@ $menu = array(
 													),
 												array( 'title' => 'pc usati',
 													   'child' => array()
-													),				
+													),
 												),
 								),
 							array( 'title' => 'assistenza a domicilio',
@@ -42,7 +42,7 @@ $menu = array(
 								),
 						   ),
 		),
-		
+
 	array( 'title' => 'contatti',
 		   'child' => array()
 		)
