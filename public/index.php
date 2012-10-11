@@ -18,7 +18,7 @@ header('Content-Type: text/html; charset=UTF-8');
   <title><?=empty($template['title']) ? '' : $template['title'] . ' | '?><?=$settings['site']['name']?></title>
   <meta name="description" content="<?=$template['metaDescription']?>">
   <meta name="keywords"	content="<?=$template['metaKeywords']?>">
-  <meta name="author" content="<?=$settings['site']['author']?>">
+  <meta name="author" content="<?=SITE_AUTHOR?>">
   <meta name="robots" content="<?=($template == 'backoffice') ? 'noindex,nofollow' : 'index,follow'?>">
   <meta name="viewport" content="width=device-width; "> <!-- user-scalable=0 -->
   <link rel="icon" type="image/png" href="<?=ROOT?>favicon.png">
@@ -45,7 +45,7 @@ header('Content-Type: text/html; charset=UTF-8');
 	  </div>
 
 	  <div id=outer-footer>
-		<a href="http://playpc.it">Powered by Playpc.it</a>
+		<a href="https://github.com/simonewebdesign/Fushi">Powered by Fushi</a>
 
 		<?php
 		/* BEGIN DEBUG
@@ -72,7 +72,7 @@ header('Content-Type: text/html; charset=UTF-8');
 
   <!-- End of Content /// JavaScript Begin --->
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
   <script>
