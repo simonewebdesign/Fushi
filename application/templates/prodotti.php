@@ -7,7 +7,7 @@
 <div id=middle-column role=main class=left>
 	<h1><?=$template['h1']?></h1>
 	<h2><?=$template['h2']?></h2>
-	<p>These fruits are from database. Pagination is done by the Paginator2 class.</p>
+	<p>These fruits are from database. Pagination is done by the Paginator class.</p>
 
 
   <?php
@@ -17,7 +17,7 @@
   $page = (int) (isset($get[1]) ? $get[1] : 1);
   $elements_per_page = 20;
 
-  $paginator = new Paginator2;
+  $paginator = new Paginator;
   $paginator->setElements( $count[0] );
   $paginator->setElementsPerPage($elements_per_page);
   $paginator->setPage($page);
