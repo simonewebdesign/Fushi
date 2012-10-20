@@ -1,4 +1,4 @@
-<?php /* form injected via AJAX */
+<?php /* form injected via Ajax */
 
 /* debug
 var_dump($template_name);
@@ -7,10 +7,9 @@ var_dump($action);
 var_dump($id);
 //*/
 
-include_once '../config/paths.php';
 include_once FUNC . 'euro.php';
 
-if ( $action == 'update' ) {
+if ($action == 'update') {
 
 	include_once CFG . 'database.php';
 	include_once LIB . 'db.php';
@@ -30,22 +29,22 @@ if ( $action == 'update' ) {
 
 		<!--<legend></legend>-->
 
-		<p class=clearfix>
+		<p>
 			<label for=name>Nome</label>
 			<input id=name name=name type=text required value="<?=isset($object->name) ? $object->name : ''?>" maxlength=100>
 		</p>
 
-		<p class=clearfix>
+		<p>
 			<label for=price>Prezzo</label>
 			<input id=price name=price type=text value="<?=isset($object->price) ? euro($object->price, 2, false) : 0?>" size=10 maxlength=10 dir=rtl>&nbsp;&euro;
 		</p>
 
-		<p class=clearfix>
-			<label for=isPublished>Pubblicato</label>
-			<input id=isPublished name=isPublished type=checkbox<?=empty($object->isPublished) ? '' : ' checked'?>>
+		<p>
+			<label for=is_published>Pubblicato</label>
+			<input id=is_published name=is_published type=checkbox<?=empty($object->is_published) ? '' : ' checked'?>>
 		</p>
 
-		<p class=clearfix>
+		<p>
 			<input name=submit type=submit value=Invio>
 		</p>
 

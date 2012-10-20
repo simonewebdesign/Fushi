@@ -1,27 +1,25 @@
 <?php /* form injected via AJAX */
 
-//* debug
+/* debug
 var_dump($template_name);
 var_dump($table_name);
 var_dump($action);
 var_dump($id);
 //*/
 
-include_once '../config/paths.php';
-
 include_once CFG . 'database.php';
 include_once LIB . 'db.php';
 
-if ( $action == 'update' ) {
+if ($action == 'update') {
 	
 	$object_db = $db->query("SELECT * FROM `$table_name` WHERE `_id`={$id}");
 	$object = $object_db->fetchObject();
-	//* debug
+	/* debug
 	var_dump($object);
 	//*/
 }
 
-$attributes_names_db = $db->query("SELECT * FROM `attributes_names`");
+$attributes_names_db = $db->query("SELECT * FROM `attributes_names` WHERE is_deleted=0");
 ?>
 
 <form method=POST action="<?=ROOT?>backoffice/<?=$table_name?>">
@@ -30,22 +28,22 @@ $attributes_names_db = $db->query("SELECT * FROM `attributes_names`");
 	
 		<!--<legend></legend>-->
 		
-		<p class=clearfix>
+		<p>
 			<label for=name_id>Attributo</label>
 			<select name=name_id>
 				<option value=0>Seleziona attributo...</option>
 			<?php while ( $attribute = $attributes_names_db->fetchObject() ) { ?>
-				<option value=<?=$attribute->_id?><?=( isset($object->name_id) && $object->name_id == $attribute->_id ) ? ' selected' : ''?>><?=$attribute->name?></option>
+				<option value=<?=$attribute->_id?> <?=( isset($object->name_id) && $object->name_id == $attribute->_id ) ? 'selected' : ''?>><?=$attribute->name?></option>
 			<?php } ?>		
 			</select>
 		</p>
 		
-		<p class=clearfix>
+		<p>
 			<label for=value>Valore</label>
 			<input id=value name=value type=text required value="<?=isset($object->value) ? $object->value : ''?>">
 		</p>
 		
-		<p class=clearfix>
+		<p>
 			<input name=submit type=submit value=Invio>
 		</p>
 		

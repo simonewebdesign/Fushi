@@ -3,7 +3,7 @@
 <?php
 
 include_once BO . 'table_settings_form.php';
-// 	function __construct ( $db, $table_name, $query='', $actions=array('update' => 'Modifica', 'delete' => 'Cancella') ) {
-$table = new Table ($db, $table_name);
+$actions = array('update' => 'Modifica');
+$table = new Table ($db, $table_name, false, $actions);
 echo $table->table();
 include_once BO . 'pagination.php';

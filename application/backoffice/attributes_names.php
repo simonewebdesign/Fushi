@@ -11,12 +11,12 @@ if ( isset($_POST['submit']) ) {
 	$_id 			= isset($_POST['id']) ? $_POST['id'] : 0;
 
 	// fields
-	$name 			= isset($_POST['name']) ? trim($_POST['name']) : '';
+	$name	= isset($_POST['name']) ? trim($_POST['name']) : '';
 
 	// binding SQL data
 	$sql_data = array(
-		'_id'			=> $_id,
-		'name'			=> $name
+		'_id'	=> $_id,
+		'name' => $name
 	);
 
 	if ( $action == 'create' ) {

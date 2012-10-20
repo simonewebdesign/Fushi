@@ -7,7 +7,7 @@
 if ( isset($_POST['submit']) ) {
 
 	// hidden fields
-	$action			= $_POST['action'];
+	$action		= $_POST['action'];
 	$_id 			= isset($_POST['id']) ? $_POST['id'] : 0;
 
 	// fields

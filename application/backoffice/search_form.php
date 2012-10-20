@@ -4,7 +4,7 @@
 
 		<legend>Ricerca avanzata</legend>
 
-		<p class=clearfix>
+		<p>
 			<label for=field>Cerca in:</label>
 			<select id=field name=field>
 				<?php foreach ( $table->columns as $column ) { ?>
@@ -13,7 +13,7 @@
 			</select>
 		</p>
 
-		<p class=clearfix>
+		<p>
 			<label for=operator>Un valore che soddisfi:</label><br>
 			<input name=operator type=radio value=OR checked>almeno una delle condizioni<br>
 			<input name=operator type=radio value=AND>tutte le condizioni<br>
@@ -21,38 +21,38 @@
 
 		<label>Condizioni:</label><br>
 
-		<p class=clearfix>
+		<p>
 			<label for=higher>Maggiore di</label>
 			<input id=higher name=higher type=number maxlength=255>
 		</p>
 
-		<p class=clearfix>
+		<p>
 			<label for=lower>Minore di</label>
 			<input id=lower name=lower type=number maxlength=255>
 		</p>
 
-		<p class=clearfix>
+		<p>
 			<label for=equals>Uguale a</label>
 			<input id=equals name=equals type=number maxlength=255>
 		</p>
 
-		<p class=clearfix>
+		<p>
 			<label for=contains>Contiene</label>
 			<input id=contains name=contains type=text maxlength=255>
 		</p>
 
-		<p class=clearfix>
+		<p>
 			<label for=starts>Comincia con</label>
 			<input id=starts name=starts type=text maxlength=255>
 		</p>
 
-		<p class=clearfix>
+		<p>
 			<label for=ends>Finisce con</label>
 			<input id=ends name=ends type=text maxlength=255>
 		</p>
 
 
-		<p class=clearfix>
+		<p>
 			<input id=submit_search name=submit_search type=submit value=Cerca>
 		</p>
 

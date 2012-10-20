@@ -15,7 +15,7 @@ if ( isset($_POST['rows_per_page']) ) { // isset($_POST['update_table']); this w
 
 			foreach ($rows_per_page_values as $rows_per_page_value) {
 
-				echo '<option value='.$rows_per_page_value;
+				echo "<option value=$rows_per_page_value";
 
 				if ( isset($_SESSION['rows_per_page']) ) {
 					if ( $rows_per_page_value == $_SESSION['rows_per_page'] ) {

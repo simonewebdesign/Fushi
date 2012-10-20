@@ -3,13 +3,13 @@
 <?php
 
 $query = "SELECT
-`_id` AS `ID`,
-`name` AS `nome`,
-`price` AS `prezzo`,
-date_format(`creationDate`, '". DATE_FORMAT_DATETIME ."') AS `data_di_creazione`,
-`isPublished` AS `pubblicato`
+`_id` `ID`,
+`name` `nome`,
+`price` `prezzo`,
+date_format(`created_at`, '". DATE_FORMAT_DATETIME ."') `data_di_creazione`,
+`is_published` `pubblicato`
 FROM `fruits`
-WHERE `isDeleted`=0";
+WHERE `is_deleted`=0";
 
 include_once BO . 'search.php';
 
@@ -18,7 +18,7 @@ $table = new Table($db, $table_name, $query);
 
 foreach ($table->rows as $row) {
 	$row->prezzo = euro($row->prezzo, 2);
-	$row->pubblicato = publish($row->pubblicato, $row->ID);
+	$row->pubblicato = $table->publish($row->pubblicato, $row->ID);
 }
 
 echo $table->table();

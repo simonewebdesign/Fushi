@@ -1,6 +1,6 @@
-<h2>Articoli</h2>
+<h2>Commenti</h2>
 
-<a class="action create" href="<?=ROOT?>backoffice/<?=$table_name?>/create">Aggiungi nuovo</a>
+<a class="action create" href="<?=ROOT?>backoffice/<?=$table_name?>/create">Aggiungi un nuovo commento a un articolo</a>
 
 <?php
 
@@ -27,7 +27,7 @@ if ( isset($_POST['submit']) ) {
 		date(MYSQL_DATETIME)//created_at
 	);
 
-	if ( $action == 'create' ) {
+	if ($action == 'create') {
 		// INSERT
 		$query_string = "INSERT INTO `$table_name` (_id, title, body, is_published, category_id, author_id, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)";
 		$positive = $create_positive;
@@ -35,7 +35,7 @@ if ( isset($_POST['submit']) ) {
 		//unset($sql_data[0]);
 	}
 	else
-	if ( $action == 'update' ) {
+	if ($action == 'update') {
 		// UPDATE
 		$sql_data[] = $_id;
 		$query_string = "UPDATE `$table_name` SET _id=?, title=?, body=?, is_published=?, category_id=?, author_id=?, updated_at=? WHERE `_id`=?";

@@ -178,3 +178,9 @@ div#table-pages {
 #footer {
 	margin-top:10px;
 }
+
+/* the form's clearfix */
+/* Contain floats: h5bp.com/q */
+form p:before, form p:after { content: ""; display: table; }
+form p:after { clear: both; }
+form p { *zoom: 1; }

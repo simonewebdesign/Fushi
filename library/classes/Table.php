@@ -32,7 +32,7 @@ class Table {
 
 		// defaults
 		$ROWS_PER_PAGE = 20;
-		$ORDER_TYPE = 'asc';
+		$ORDER_TYPE = 'DESC';
 
 		$this->db = $db;
 		$this->table_name = $table_name;
@@ -130,7 +130,7 @@ class Table {
 
 			foreach ( $this->actions as $pure_action => $readable_action ) {
 
-				$html .= '<td>';
+				$html .= '<td>' . PHP_EOL;
 					$html .= '<a ';
 					$html .= 'href="' . ROOT .
 					'backoffice/' . $this->table_name .
@@ -139,8 +139,8 @@ class Table {
 					'" ';
 					$html .= 'class="action ' . $pure_action . '">';
 					$html .= $readable_action;
-					$html .= '</a>';
-				$html .= '</td>';
+					$html .= '</a>' . PHP_EOL;
+				$html .= '</td>' . PHP_EOL;
 			}
 		}
 
@@ -194,10 +194,10 @@ class Table {
 	*/
 	function table () {
 
-		$html = '<table>';
-		$html .= $this->thead();
-		$html .= $this->tbody();
-		$html .= '</table>';
+		$html = '<table>' . PHP_EOL;
+		$html .= $this->thead() . PHP_EOL;
+		$html .= $this->tbody() . PHP_EOL;
+		$html .= '</table>' . PHP_EOL;
 
 		return $html;
 	}
@@ -209,19 +209,21 @@ class Table {
 
 		$order_type = $this->order_type == 'asc' ? 'desc' : 'asc';
 
-		$html = '<thead>';
-			$html .= '<tr>';
+		$html = '<thead>' . PHP_EOL;
+			$html .= '<tr>' . PHP_EOL;
 			foreach ( $this->columns as $column_name ) {
 
 				$class = $this->order_by == $column_name ? 'icon ' . $this->order_type : '';
 
-				$html .= '<th>';
-					$html .= '<a class="' . $class . '" href="' . ROOT . 'backoffice/' . $this->table_name . '/order/' . $column_name . '/' . $order_type . '">' . humanize($column_name) . '</a>';
-				$html .= '</th>';
+				$html .= '<th>' . PHP_EOL;
+					$html .= '<a class="' . $class
+					. '" href="' . ROOT . 'backoffice/' . $this->table_name . '/order/' . $column_name . '/' . $order_type . '">'
+					. humanize($column_name) . '</a>' . PHP_EOL;
+				$html .= '</th>' . PHP_EOL;
 			}
-				$html .= empty($this->actions) ? '' : '<th colspan="'.$this->getNumberOfActions().'">Azioni</th>';
-			$html .= '</tr>';
-		$html .= '</thead>';
+				$html .= empty($this->actions) ? '' : '<th colspan="'.$this->getNumberOfActions().'">Azioni</th>' . PHP_EOL;
+			$html .= '</tr>' . PHP_EOL;
+		$html .= '</thead>' . PHP_EOL;
 
 		return $html;
 	}
@@ -230,17 +232,17 @@ class Table {
 	* @return the HTML body of the table, with all the table content.
 	*/
 	function tbody () {
-		$html = '<tbody>';
+		$html = '<tbody>' . PHP_EOL;
 		foreach ( $this->rows as $row ) {
-			$html .= '<tr>';
+			$html .= '<tr>' . PHP_EOL;
 			foreach ( $row as $cell ) {
-				$html .= '<td>' . $cell . '</td>';
+				$html .= '<td>' . $cell . '</td>' . PHP_EOL;
 			}
 			$id = reset($row);
-			$html .= $this->actions($id);
-			$html .= '</tr>';
+			$html .= $this->actions($id) . PHP_EOL;
+			$html .= '</tr>' . PHP_EOL;
 		}
-		$html .= '</tbody>';
+		$html .= '</tbody>' . PHP_EOL;
 		return $html;
 	}
 
@@ -271,7 +273,7 @@ class Table {
 	* @param $class optional CSS class.
 	* @return the wrapped value.
 	*/
-	function cell ($value, $class='') {
+	/*function cell ($value, $class='') {
 
 		$html = "<td";
 		$html .= empty($class) ? '' : " class='{$class}'";
@@ -280,5 +282,18 @@ class Table {
 		$html .= "</td>";
 
 		return $html;
+	}*/
+	
+	function publish ($bool, $row_id) {
+		$html = '<a class="action ';
+		$html .= $bool ? 'true' : 'false';
+		$html .= '" ';
+		$html .= 'href="' . ROOT . 'backoffice/' . $this->table_name . '/publish/' . $row_id . '/';
+		$html .= $bool ? 0 : 1;
+		$html .= '">';
+		$html .= $bool ? 'Sì' : 'No';
+		$html .= '</a>' . PHP_EOL;
+		return $html;
 	}
+
 }

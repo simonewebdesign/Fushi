@@ -19,3 +19,6 @@ define('DATE_FORMAT_TIME', '%H:%i'); // prints: 16:30
 
 // REFERENCE: http://php.net/manual/en/function.strftime.php
 define('STRFTIME_DATETIME', '%A %d %B %Y &nbsp; %H:%M'); // prints: Lunedì 16 Aprile 2012   15:51
+
+// for the date() function
+define('MYSQL_DATETIME', "Y-m-d H:i:s"); // 2001-03-10 17:16:18 (the MySQL DATETIME format)

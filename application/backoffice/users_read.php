@@ -3,13 +3,16 @@
 <?php
 
 $query = "SELECT
-`_id` AS `ID`,
-`name` AS `nome`,
-`surname` AS `cognome`,
-`email` AS `indirizzo_email`,
-date_format(`registrationDate`, '". DATE_FORMAT_DATETIME ."') AS `data_di_registrazione`
-FROM `users`
-WHERE `isDeleted`=0 AND `_id`>0";
+_id ID,
+login,
+name nome,
+surname cognome,
+email,
+city provenienza,
+is_admin amministratore,
+date_format(`created_at`, '". DATE_FORMAT_DATETIME ."') registrato_il
+FROM users
+WHERE `is_deleted`=0 AND `_id`>0";
 
 include_once BO . 'table_settings_form.php';
 $table = new Table($db, $table_name, $query);

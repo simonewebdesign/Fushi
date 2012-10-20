@@ -13,19 +13,19 @@ if ( isset($_POST['submit']) ) {
 	// fields
 	$name 			= isset($_POST['name']) ? trim($_POST['name']) : '';
 	$price			= isset($_POST['price']) ? euroToDecimal($_POST['price']) : 0.00;
-	$isPublished 	= (int) (isset($_POST['isPublished']) ? 1 : 0);
+	$is_published 	= (int) (isset($_POST['is_published']) ? 1 : 0);
 
 	// binding SQL data
 	$sql_data = array(
 		'_id'			=> $_id,
 		'name'			=> $name,
 		'price'			=> $price,
-		'isPublished'	=> $isPublished
+		'is_published'	=> $is_published
 	);
 
 	if ( $action == 'create' ) {
 		// INSERT
-		$query_string = "INSERT INTO `$table_name` (`name`, `price`, `isPublished`, `creationDate`) VALUES (:name, :price, :isPublished, NOW())";
+		$query_string = "INSERT INTO `$table_name` (`name`, `price`, `is_published`, `created_at`) VALUES (:name, :price, :is_published, NOW())";
 		$positive = $create_positive;
 		$negative = $create_negative;
 		unset($sql_data['_id']);
@@ -33,7 +33,7 @@ if ( isset($_POST['submit']) ) {
 	else
 	if ( $action == 'update' ) {
 		// UPDATE
-		$query_string = "UPDATE `$table_name` SET `name`=:name, `price`=:price, `isPublished`=:isPublished WHERE `_id`=:_id";
+		$query_string = "UPDATE `$table_name` SET `name`=:name, `price`=:price, `is_published`=:is_published WHERE `_id`=:_id";
 		$positive = $update_positive;
 		$negative = $update_negative;
 	}

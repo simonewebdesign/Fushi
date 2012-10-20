@@ -11,6 +11,10 @@ tutte relative alle richieste AJAX. */
 $(document).ready( function() {
 
 	$('a.action').on('click', function() {
+	
+		// cleaning up old requests' styles... TODO
+		$('#response').removeClass();	
+	
 		// ajax link has been clicked.
 		// first of all, the "delete".
 		if ( $(this).hasClass('delete') ) {
@@ -19,12 +23,11 @@ $(document).ready( function() {
 				return false
 			} else {
 				$(this).parent().parent().remove() // delete row only visually
+				//$('#response').addClass('delete'); // TODO this doesnt work because of cleaning
 			}
 		}
-
-		// cleaning up old requests' styles...
-		$('#response').removeClass();
-
+		
+		
 		$.ajax ({
 			// executing ajax request...
 			type:	'POST',

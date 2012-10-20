@@ -6,7 +6,9 @@ error_reporting(1);
 ini_set('display_errors', 'On');
 
 
-/* Write here the tables you want to display in backoffice. */
+/* Write here the tables you want to DISPLAY to the user in backoffice.
+Even if you don't write a table here below, it will always be accessible by URL
+if you know the table name. */
 $valid_table_names = array(
   'fruits'		          => 'Frutti',
   'attributes_names'    => 'Attributi',
@@ -14,7 +16,7 @@ $valid_table_names = array(
   'articles'            => 'Articoli',
   'categories'          => 'Categorie',
   'comments'            => 'Commenti',
-//* You'd want to hide the following tables to final users.
+//* You may want to hide the following tables to final users.
   'settings' 		        => 'Impostazioni',
   'templates' 	        => 'Template',
   'users'			          => 'Utenti');
@@ -64,7 +66,7 @@ $update_negative = "Errore: aggiornamento fallito. Riprovare.";
 /* Begin Backoffice Session handling */
 if ( !empty($session->user_id) ) {
 	// looking for the user that is currently logged in
-	$user_query = "SELECT `_id`, 	`login`, 	`name`, 	`surname`, 	`email`, 	`password`,	`isAdmin`, 	`birthDate`, 	date_format(registrationDate, '" . DATE_FORMAT_DATETIME . "') as registrationDate,	address, 	cap, 	city FROM users WHERE _id = {$session->user_id}";
+	$user_query = "SELECT * FROM users WHERE _id = {$session->user_id}";
 	$user_db = $db->query($user_query);
 	$user = $user_db->fetchObject();
 }

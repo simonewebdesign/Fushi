@@ -1,23 +1,20 @@
-<?php /* form injected via AJAX */
+<?php /* form injected via Ajax */
 
-/* debug
+//* debug
 var_dump($template_name);
 var_dump($table_name);
 var_dump($action);
 var_dump($id);
 //*/
 
-include_once '../config/paths.php';
-include_once FUNC . 'euro.php';
-
-if ( $action == 'update' ) {
+if ($action == 'update') {
 
 	include_once CFG . 'database.php';
 	include_once LIB . 'db.php';
 
 	$object_db = $db->query("SELECT * FROM `$table_name` WHERE `_id`={$id}");
 	$object = $object_db->fetchObject();
-	/* debug
+	//* debug
 	var_dump($object);
 	//*/
 }
@@ -28,43 +25,68 @@ if ( $action == 'update' ) {
 
 	<fieldset>
 
-		<!--<legend></legend>-->
+		<legend>Utente</legend>
 
-		<p class=clearfix>
+		<p>
+			<label for=_id>ID</label>
+			<input id=_id name=_id type=text value="<?=isset($object->_id) ? $object->_id : ''?>" size=4 disabled>
+		</p>
+		
+		<p>
+			<label for=login>Login</label>
+			<input id=login name=login type=text value="<?=isset($object->login) ? $object->login : ''?>" maxlength=30>
+		</p>
+		
+		<p>
 			<label for=name>Nome</label>
 			<input id=name name=name type=text value="<?=isset($object->name) ? $object->name : ''?>" maxlength=50>
 		</p>
 
-		<p class=clearfix>
+		<p>
 			<label for=surname>Cognome</label>
 			<input id=surname name=surname type=text value="<?=isset($object->surname) ? $object->surname : ''?>" maxlength=50>
 		</p>
 
-		<p class=clearfix>
+		<p>
 			<label for=email>Email</label>
-			<input id=email name=email type=email required value="<?=isset($object->email) ? $object->email : ''?>" size=30 maxlength=100>
-		</p>
+			<input id=email name=email type=email value="<?=isset($object->email) ? $object->email : ''?>" size=30 maxlength=100 required>
+		</p>	
 
-		<p class=clearfix>
-			<label for=birthDate>Data di nascita</label>
-			<input id=birthDate name=birthDate type=date value="<?=isset($object->birthDate) ? $object->birthDate : ''?>" maxlength=30>
-		</p>
-
-		<p class=clearfix>
+		<p>
 			<label for=address>Indirizzo</label>
 			<input id=address name=address type=text value="<?=isset($object->address) ? $object->address : ''?>" size=50 maxlength=100>
 		</p>
 
-		<p class=clearfix>
+		<p>
 			<label for=cap>CAP</label>
 			<input id=cap name=cap type=text value="<?=isset($object->cap) ? $object->cap : ''?>" size=5 maxlength=5>
 		</p>
 
-		<p class=clearfix>
+		<p>
 			<label for=city>Provincia</label>
 			<input id=city name=city type=text value="<?=isset($object->city) ? $object->city : ''?>" maxlength=50>
 		</p>
 
+		<p>
+			<label for=bio>Biografia</label>
+			<textarea id=bio name=bio><?=isset($object->bio) ? $object->bio : ''?></textarea>
+		</p>
+		
+		<p>
+			<label for=birthday>Data di nascita</label>
+			<input id=birthday name=birthday type=date value="<?=isset($object->birthday) ? $object->birthday : ''?>" maxlength=30>
+		</p>
+
+		<p>
+			<label for=is_admin>Amministratore</label>
+			<input id=is_admin name=is_admin type=checkbox<?=empty($object->is_admin) ? '' : ' checked'?>>
+		</p>		
+
+		<p>
+			<label for=password>Cambia password<br><small>(Lascia vuoto se vuoi mantenere quella attuale)</small></label>
+			<input id=password name=password type=password maxlength=50>
+		</p>	
+		
 		<p>
 			<input name=submit type=submit value=Invio>
 		</p>

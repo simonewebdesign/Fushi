@@ -4,6 +4,7 @@
 $table_name = 'sessions'; // needed because it isn't set in $get[1].
 
 $query = "SELECT
+u.login,
 u.`name` AS `nome`,
 DATE_FORMAT(s.`entryDate`, '" . DATE_FORMAT_TIME . "') AS `collegato_dalle`,
 s.`lastActivity` AS `ultimo_click`
@@ -21,4 +22,3 @@ foreach ($table->rows as $row) {
 }
 
 echo $table->table();
-//echo $table->paginate();

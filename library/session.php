@@ -16,7 +16,7 @@ session_set_cookie_params(
 	SESSION_DOMAIN,
 	SESSION_SECURE,
 	SESSION_HTTPONLY
-	);
+);
 
 session_start();
 $verbose[] = "(session.php) session_start() called.";

@@ -1,4 +1,4 @@
-<?php /* form injected via AJAX */
+<?php /* form injected via Ajax */
 
 /* debug
 var_dump($template_name);
@@ -25,11 +25,16 @@ if ($action == 'update') {
 
 	<fieldset>
 
-		<!--<legend></legend>-->
+		<legend>Categoria</legend>
 
 		<p>
 			<label for=name>Nome</label>
 			<input id=name name=name type=text required value="<?=isset($object->name) ? $object->name : ''?>" maxlength=100>
+		</p>
+
+		<p>
+			<label for=is_published>Pubblicata</label>
+			<input id=is_published name=is_published type=checkbox<?=empty($object->is_published) ? '' : ' checked'?>>
 		</p>
 
 		<p>

@@ -11,36 +11,70 @@ if ( isset($_POST['submit']) ) {
 	$_id 			= isset($_POST['id']) ? $_POST['id'] : 0;
 
 	// fields
+	$login			= isset($_POST['login']) ? trim($_POST['login']) : '';
 	$name 			= isset($_POST['name']) ? trim($_POST['name']) : '';
 	$surname 		= isset($_POST['surname']) ? trim($_POST['surname']) : '';
 	$email 			= isset($_POST['email']) ? trim($_POST['email']) : '';
-	$birthDate 		= isset($_POST['birthDate']) ? trim($_POST['birthDate']) : '';
 	$address 		= isset($_POST['address']) ? trim($_POST['address']) : '';
-	$cap 			= isset($_POST['cap']) ? trim($_POST['cap']) : '';
+	$cap 				= isset($_POST['cap']) ? trim($_POST['cap']) : '';
 	$city 			= isset($_POST['city']) ? trim($_POST['city']) : '';
+	$bio 				= isset($_POST['bio']) ? trim($_POST['bio']) : '';
+	$is_admin 	= (int) (isset($_POST['is_admin']) ? 1 : 0);
+	$birthday 	= isset($_POST['birthday']) ? trim($_POST['birthday']) : '';
+	$password 	= isset($_POST['password']) ? trim($_POST['password']) : '';
 
+	
 	// binding SQL data
 	$sql_data = array(
-		'_id'			=> $_id,
-		'name'			=> $name,
-		'surname'		=> $surname,
-		'email'			=> $email,
-		'birthDate'		=> $birthDate,
-		'address'		=> $address,
-		'cap'			=> $cap,
-		'city'			=> $city
+		$login,
+		$name,
+		$surname,
+		$email,
+		$address,
+		$cap,
+		$city,
+		$bio,
+		$is_admin,
+		$birthday,
+		date(MYSQL_DATETIME)
 	);
 
 	if ( $action == 'create' ) {
 		// INSERT
-		$query_string = "INSERT INTO `$table_name` (`name`, `surname`, `email`, `birthDate`, `address`, `cap`, `city`, `registrationDate`) VALUES (:name, :surname, :email, :birthDate, :address, :cap, :city, NOW())";
+		$query_string = "INSERT INTO `$table_name` (
+		login,
+		name,
+		surname,
+		email,
+		address,
+		cap,
+		city,
+		bio,
+		is_admin,
+		birthday,
+		created_at
+		) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		$positive = $create_positive;
 		$negative = $create_negative;
-		unset($sql_data['_id']);
+
 	} else
 	if ( $action == 'update' ) {
 		// UPDATE
-		$query_string = "UPDATE `$table_name` SET `name`=:name, `surname`=:surname, `email`=:email, `birthDate`=:birthDate, `address`=:address, `cap`=:cap, `city`=:city WHERE `_id`=:_id";
+		$query_string = "UPDATE `$table_name` SET
+		login=?,
+		name=?,
+		surname=?,
+		email=?,
+		address=?,
+		cap=?,
+		city=?,
+		bio=?,
+		is_admin=?,
+		birthday=?,
+		created_at=?
+		WHERE `_id`=?";
+		$sql_data[] = $_id;
+		
 		$positive = $update_positive;
 		$negative = $update_negative;
 	}
@@ -56,6 +90,17 @@ if ( isset($_POST['submit']) ) {
 	} else {
 		$response = $negative;
 	}
-	//$id = $action == 'create' ? $db->lastInsertId() : $_id;
-	//$response.= " (ID = $id)";
+	$id = $action == 'create' ? $db->lastInsertId() : $_id;
+	$response.= " (ID = $id)";
+	
+	if ( !empty($password) ) {
+		$query_string = "UPDATE `$table_name` SET `password`=PASSWORD(?) WHERE _id=?";
+		$sql_data = array($password, $id);
+		$statement = $db->prepare($query_string);
+		if ( $statement->execute($sql_data) ) {
+			echo "Password modificata con successo per l'utente con ID=$id."; 
+		} else {
+			echo "ERRORE durante la modifica della password per l'utente con ID=$id.";
+		}
+	}
 }

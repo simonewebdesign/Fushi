@@ -3,7 +3,7 @@ include_once '../config/database.php';
 include_once '../library/db.php';
 
 $bool = (int) (isset($params[4]) ? $params[4] : 0);
-$query = "UPDATE $table_name SET isPublished=:publish WHERE _id=:_id";
+$query = "UPDATE $table_name SET is_published=:publish WHERE _id=:_id";
 
 $sql_data = array(
 	'_id' => $id,

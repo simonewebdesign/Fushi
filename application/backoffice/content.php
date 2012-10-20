@@ -1,6 +1,6 @@
 <?php
 
-if ( $user->isAdmin ) {
+if ( $user->is_admin && !$user->is_deleted ) {
 	//user has admin privileges
 	$verbose[] = "(content.php) user n. {$user->_id} has admin privileges.";
 	$verbose[] = "(content.php) showing backoffice's content...";

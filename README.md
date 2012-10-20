@@ -172,22 +172,64 @@ A concrete example:
 
 ### The Backend (aka Backoffice)
 
+You can access to the backend interface by `http://yoursite.com/backoffice`.
+
+Example user (administrator):
+- Username: **admin**
+- Password: **demo**
+
+Example user (no administrator privileges):
+- Username: **demo**
+- Password: **demo**
+
+However, you can't see anything in the backend if you have no admin privileges. Even though you try to login (or you're already logged in), in every circumstance you're just going to be redirected to the index.
+
 The backend interface is based on the CRUD (create, read, update, delete).
-Every table must have (in `application/backoffice/`) a number of files that equals the # of actions +1.
+Every table has usually 3 files in `application/backoffice/`.
 
 For example:
 
 Table: **Products**
 
 Files:
-- products.php
-- products_create.php
-- products_read.php
-- products_update.php
-- products_delete.php
+- `products.php`
+- `products_form.php`
+- `products_read.php`
 
-As a convention, the table names must always be in plural form.
+The 3 files above are handling all the operations behind the `Product` object.
 
+As for *convention over configuration*, the table names must always be in plural form.
+
+From the backoffice you can also generate a template scaffold, but beware: you can't rename a template. If you need to delete a whole template, just remove its files: one is in `application/templates/`, and the other one is in `public/css/templates/`.
+
+### Sessions
+
+Sessions are automatically handled by `lib/session.php`.
+You will always have the following variables available globally:
+- `$session`
+    - `_id`
+    - `user_id`
+    - `sessionId`
+    - `ipAddress`
+    - `userAgent`
+    - `entryDate`
+    - `lastActivity`
+- `$user`
+    - `_id`
+    - `login`
+    - `name`
+    - `surname`
+    - `email`
+    - `password`
+    - `address`
+    - `cap`
+    - `city`
+    - `bio`
+    - `is_admin`
+    - `is_deleted`
+    - `created_at`
+    - `updated_at`
+    - `birthday`
 
 
 FAQ (Frequently Asked Questions)
