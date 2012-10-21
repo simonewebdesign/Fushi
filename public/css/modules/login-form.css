@@ -1,6 +1,6 @@
 #login-form {
 	width:240px;
-	margin-left:20px;
+	/*margin-left:20px;*/
 }
 
 #login-form label,
@@ -13,15 +13,6 @@
 
 #login-form label {
 	width:100px;
-}
-
-#login-form textarea,
-#login-form input {
-
-}
-
-#login-form textarea {
-	width:300px;
 }
 
 #login-form input {

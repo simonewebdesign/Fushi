@@ -6,6 +6,7 @@ define('ABSOLUTE_ROOT', 'http://localhost/fushi/');
 //*/
 
 /*** internal paths / shortcuts ***/
+define('APP',			'../application/');
 define('LIB',			'../library/');
 define('CLASS',		'../library/classes/');
 define('FUNC', 		'../library/functions/');

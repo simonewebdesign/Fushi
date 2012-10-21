@@ -34,3 +34,6 @@ if ( isset( $_COOKIE[session_name()] ) ) {
 	include LIB . 'session/read.php';
 
 }
+
+// LOGIN
+include_once LIB . 'post_login.php';
