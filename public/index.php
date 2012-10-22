@@ -26,6 +26,26 @@ header('Content-Type: text/html; charset=UTF-8');
 </head>
 <body>
 
+	<?php
+	/* BEGIN DEBUG
+	echo "<pre style='font-size:.7em;text-align:left;'>";
+	echo "DEBUG:\n";
+	echo '$_SESSION = '; 	var_dump($_SESSION);
+	echo '$verbose = ';		var_dump($verbose);
+	echo '$template_name = ';var_dump($template_name);
+	echo '$table_name = ';var_dump($table_name);
+	echo '$action = ';		var_dump($action);
+	echo '$id = ';				var_dump($id);
+	echo '$session = ';		var_dump($session);
+	echo '$user = ';			var_dump($user);
+	echo '$_GET = ';			var_dump($_GET);
+	echo '$get = ';				var_dump($get);
+	echo '$_POST = ';			var_dump($_POST);
+	echo "</pre>";
+	//* END DEBUG */
+	?>
+
+
   <div id=wrapper>
 
 	  <div id=header>
@@ -43,7 +63,8 @@ header('Content-Type: text/html; charset=UTF-8');
 	  </div>
 
 	  <div id=footer role=contentinfo>
-			Copyleft &copy; <?=YEAR . ' ' . $settings['site']['name']?>. All rights reversed. Tel: 123 4567890 - Fax: 123 4567890
+			Copyleft &copy; <?=YEAR . ' ' . $settings['site']['name']?>. All rights reversed. 
+			Tel: 123 4567890 - Fax: 123 4567890
 	  </div>
 
 	  <div id=outer-footer>

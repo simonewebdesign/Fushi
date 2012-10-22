@@ -4,7 +4,7 @@
 		padding: 0;
 		margin:0;
 
-		background: #555;
+		background: #eee;
 	}
 		#navbar ul li {
 			float: left;
@@ -14,8 +14,7 @@
 				border-right: 1px solid white;
 			}
 
-			#navbar ul li:hover {
-			}
+			#navbar ul li:hover {}
 
 			#navbar ul li a {
 				display:block;
@@ -25,14 +24,14 @@
 			}
 				#navbar ul li a:hover {
 					text-decoration:none;
-					background:#666;
+					background:#fcc;
 				}
 				#navbar ul li a:active {
-					background:#888;
+					background:#fee;
 				}
 
 				#navbar ul li a.current {
-					background:#888;
+					background:#fee;
 				}
 					#navbar ul li a.current:hover {
 

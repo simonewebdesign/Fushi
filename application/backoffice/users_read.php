@@ -17,5 +17,10 @@ WHERE `is_deleted`=0 AND `_id`>0";
 include_once BO . 'table_settings_form.php';
 $table = new Table($db, $table_name, $query);
 
+
+foreach ($table->rows as $row) {
+	$row->amministratore = $row->amministratore? 'Sì':'No';
+}
+
 echo $table->table();
 include_once BO . 'pagination.php';

@@ -64,7 +64,7 @@ $update_negative = "Errore: aggiornamento fallito. Riprovare.";
 
 
 /* Begin Backoffice Session handling */
-include_once APP . 'get_user_by_session_id.php';
+include_once LIB . 'get_user_by_session_id.php';
 
 if ($user) {
 	// user is LOGGED
@@ -73,6 +73,6 @@ if ($user) {
 
 } else {
 	// user is NOT LOGGED
-	include_once APP . 'post_login.php';
+	include_once INC . 'modules/login.php';
 }
 /* End Backoffice Session handling */

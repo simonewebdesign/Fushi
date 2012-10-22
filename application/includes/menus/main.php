@@ -1,7 +1,8 @@
 <?php
 
 $menu = array(
-	'' 				=> 'Home',
+	'' 						=> 'Home',
+	'news'				=> 'News',
 	'chi-siamo'  	=> 'Chi Siamo',
 	'dove-siamo' 	=> 'Dove Siamo',
 	'prodotti' 		=> 'Prodotti',

@@ -1,7 +1,6 @@
 <?php
 
-	if ( isset($_POST['login']) ) {
-		// user is trying to log in
+	if ( isset($_POST['login']) ) { // user is trying to log in
 		$verbose[] = "(post_login.php) an user is trying to log in.";
 
 		$username = isset($_POST['username']) ? trim($_POST['username']) : '';
@@ -19,43 +18,46 @@
 			);
 
 			$verbose[] = "(post_login.php) querying the database looking for the user...";
-			include_once 'get_user_by_post_login.php';
+			include_once LIB . 'get_user_by_post_login.php';
 
-			if ($user) {
-				// user is now logged in
+			if ($user) { // user is now logged in
 				$verbose[] = "(post_login.php) user FOUND";
 				$verbose[] = "(post_login.php) user n. {$user->_id} is now logged in.";
 				$verbose[] = "(post_login.php) updating session table...";
 
-				include_once 'update_session_login.php';
+				include_once LIB . 'update_session_login.php';
 
 				$verbose[] = "(post_login.php) session table successfully updated.";
 				// including backoffice's content
 				//include_once BO . 'content.php';
-				include_once 'login_successful.php'
+				//include_once APP . 'login_successful.php';
 
 			} else { // !user
 			
 				$verbose[] = "(post_login.php) WARNING: user NOT FOUND.";
 				$login_error = "Username o password errati.";
 
-				$verbose[] = "(post_login.php) showing login form...";
-				include_once INC . 'forms/login.php';
-				$verbose[] = "(post_login.php) login form shown.";
+			//	$verbose[] = "(post_login.php) showing login form...";
+			//	include_once INC . 'forms/login.php';
+			//	$verbose[] = "(post_login.php) login form shown.";
 			}
 			
 		} else { // empty form
+		
 			$verbose[] = "(post_login.php) WARNING: the user has sent empty data from the login form.";
 			$login_error = "Non puoi lasciare i campi vuoti.";
 
-			$verbose[] = "(post_login.php) showing login form...";
-			include_once INC . 'forms/login.php';
-			$verbose[] = "(post_login.php) login form shown.";
+			//	$verbose[] = "(post_login.php) showing login form...";
+			//	include_once INC . 'forms/login.php';
+			//	$verbose[] = "(post_login.php) login form shown.";
 		}
 
 	} else { // not a post request
 
-		$verbose[] = "(post_login.php) showing login form...";
-		include_once INC . 'forms/login.php';
-		$verbose[] = "(post_login.php) login form shown.";
+		// don't do anything
+		// but login form needs to be shown
+	
+		//	$verbose[] = "(post_login.php) showing login form...";
+		//	include_once INC . 'forms/login.php';
+		//	$verbose[] = "(post_login.php) login form shown.";
 	}

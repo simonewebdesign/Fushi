@@ -5,10 +5,11 @@ html {
 }
 
 body {
-	background-color:black;
-    color: #ddd;
-    font-family: Arial;
+	color: #333;
+	font-family: Arial;
 }
+
+/***** Links *****/
 a {
     color: green;
     text-decoration: none;
@@ -21,20 +22,33 @@ a {
 		color: white;
 	}
 	a:visited {
-		color:green;
+		color: green;
 	}
-
+/***** Links *****/
+	
+/***** Forms *****/
 form {}
+
 	form fieldset {
 		border-radius:2px;
 	}
+	
+	form input,
+	form textarea {
+		box-shadow:inset 1px 1px 1px rgba(0,0,0,.1);
+	}
+	
 	form input {}
 	form textarea {}
-
+/***** Forms *****/
+	
+div {
+		box-shadow:inset 0px 0px 1px rgba(0,0,0,.1);	
+}
+	
 #wrapper {
     width: 1000px;
     margin: 0 auto;
-	box-shadow: 0 0 10px black;
 }
 	#header,
 	#main,
@@ -43,30 +57,28 @@ form {}
 	}
 	#header {
 		position:relative;
-		background-color:#333;
+
 	}
 	/*	#header a {
 			display:block;
 		}
 	*/
 	#main {}
-	#footer {background-color:#333;}
+	#footer {}
 
 		/*** #main content ***/
 		#left-column {
 			width:250px;
-			height:500px;
-			background-color:#833;
+			/*height:500px;*/
 		}
 		#middle-column {
 			width:500px;
 			/*height:500px;*/
-			background-color:#383;
+			min-height:500px;
 		}
 		#right-column {
 			width:250px;
-			height:500px;
-			background-color:#338;
+			/*height:500px;*/
 		}
 
 		#outer-footer {
@@ -94,7 +106,7 @@ form {}
         border-radius:3px;
       }
       #pages a.current{
-        color:white;
+        color:red;
       }
 
 /* special */

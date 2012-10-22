@@ -8,27 +8,6 @@ body {
 	margin-top:32px; /* height of topbar */
 }
 
-a.action, .icon {
-	display:block;
-	padding-left:20px;
-	padding-right:6px;
-	background-repeat:no-repeat !important;
-	background-position:left !important; /* If you only specify one keyword, the other value will be "center". - http://www.w3schools.com/cssref/pr_background-position.asp */
-}
-	/* all valid/possible actions */
-	.true {		background-image:url('../../img/icons/sweetieplus/badge-circle-check-16-ns.png') !important; }
-	.false {		background-image:url('../../img/icons/sweetieplus/badge-circle-minus-16-ns.png') !important; }
-	.create {	background-image:url('../../img/icons/sweetieplus/badge-square-plus-16-ns.png') !important; }
-	.update {	background-image:url('../../img/icons/sweetieplus/page-pencil-16-ns.png') !important; }
-	.delete {	background-image:url('../../img/icons/sweetieplus/cross-16-ns.png') !important; }
-	.preview {	background-image:url('../../img/icons/sweetieplus/page-forum-16-ns.png') !important; }
-	.view {		background-image:url('../../img/icons/sweetieplus/clipboard-eye-16-ns.png') !important; }
-	.send {		background-image:url('../../img/icons/sweetieplus/arrow-right-16-ns.png') !important; }
-	.add {		background-image:url('../../img/icons/sweetieplus/badge-circle-plus-16-ns.png') !important; }
-	.error {		background-image:url('../../img/icons/sweetieplus/warning-16-ns.png') !important; }
-	.asc {		background-image:url('../../img/icons/sweetieplus/arrow-up-16-ns.png') !important; }
-	.desc {		background-image:url('../../img/icons/sweetieplus/arrow-down-16-ns.png') !important; }
-
 form {}
 	form fieldset {
 		margin: 10px;

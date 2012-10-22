@@ -1,12 +1,12 @@
 <?php 
 
-include_once APP . 'get_user_by_session_id.php';
+include_once LIB . 'get_user_by_session_id.php';
 
 if ($user) { // logged in
 
-	// do some stuff
+	echo "utente loggato. la tua login è " . $user->login;// do some stuff
 	
 } else { // not logged in
 
-	include_once APP . 'post_login.php';
+	include_once INC . 'forms/login.php';
 }
