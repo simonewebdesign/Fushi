@@ -1,5 +1,5 @@
 <?php
-$articles = $db->query("SELECT *, u.name author, c.name category, COUNT(com._id) number_of_comments 
+$articles = $db->query("SELECT *, u.name author, c.name category, COUNT(com._id) number_of_comments, a.body content
 FROM ((articles a 
 	INNER JOIN categories c 
 		ON c._id = a.category_id 

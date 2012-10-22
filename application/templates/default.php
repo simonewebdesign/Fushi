@@ -2,7 +2,7 @@
 
 <div id=left-column class=left>
 	<p>Questo è un paragrafo d'esempio. Lorem ipsum dolor sit amet, consecutetur adipiscing elit.</p>
-	<?php include_once INC . 'modules/login.php' ?>
+	<?php include_once APP . 'accounts/login.php' ?>
 	<p>Questo è un paragrafo d'esempio. Lorem ipsum dolor sit amet, consecutetur adipiscing elit.</p>		
 </div>
 <div id=middle-column class=left role=main>
