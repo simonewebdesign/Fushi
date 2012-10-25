@@ -7,7 +7,8 @@ $menu = array(
 	'dove-siamo' 	=> 'Dove Siamo',
 	'prodotti' 		=> 'Prodotti',
 	'servizi' 		=> 'Servizi',
-	'contatti' 		=> 'Contatti'
+	'contatti' 		=> 'Contatti',
+	'accounts/register' => 'Sign Up'
 );
 
 echo "<ul class=clearfix>";

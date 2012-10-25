@@ -1,5 +1,5 @@
 <?php
-$articles = $db->query("SELECT *, u.name author, c.name category, COUNT(com._id) number_of_comments, a.body content
+$articles = $db->query("SELECT *, u.name author, c.name category, COUNT(com._id) number_of_comments, a.body content, a.created_at created, a.updated_at updated
 FROM ((articles a 
 	INNER JOIN categories c 
 		ON c._id = a.category_id 
@@ -11,8 +11,16 @@ WHERE a.is_deleted=0
 GROUP BY a._id
 ORDER BY a._id DESC");
 while ($article = $articles->fetchObject()) {
-	$article->timestamp = strtotime($article->created_at);
+	echo "<hr>";
+	
+	$article->timestamp = strtotime($article->created);
 	$article->elapsedTime = getElapsedTime(time() - $article->timestamp);
 	$article->datetime = strftime(STRFTIME_DATETIME, $article->timestamp);
+	
 	include INC . 'article.php';
 }
+
+/*if (!$articles) {
+	echo "<em>No articles yet.</em>";
+}
+*/

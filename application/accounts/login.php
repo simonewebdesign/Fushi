@@ -9,7 +9,7 @@ if ($user) { // logged in
 	if ($template_name == 'backoffice') {
 		include_once BO . 'content.php';
 	} else {
-		echo "utente loggato. la tua login è " . $user->login;
+		echo "Welcome, <b>{$user->login}</b>";
 	}
 	
 	

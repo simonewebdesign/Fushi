@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.10.1
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 20, 2012 at 04:17 PM
--- Server version: 5.5.20
--- PHP Version: 5.3.10
+-- Generation Time: Oct 25, 2012 at 04:25 PM
+-- Server version: 5.5.24-log
+-- PHP Version: 5.3.13
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -40,7 +40,14 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `category_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`_id`),
   KEY `author_id` (`author_id`,`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `articles`
+--
+
+INSERT INTO `articles` (`_id`, `title`, `body`, `is_published`, `is_deleted`, `created_at`, `updated_at`, `likes`, `hates`, `author_id`, `category_id`) VALUES
+(1, 'Hello! This is the first article.', '<p><strong>Heya!</strong> This is just a demo article. Feel free to edit or delete it.</p><p>Sed blandit eros ut urna sollicitudin ut congue est ultricies. Curabitur laoreet tincidunt eros ut convallis. Quisque nisi nisl, lacinia sit amet tincidunt ac, fermentum eget nibh. Quisque vel ante nec leo lobortis condimentum. Suspendisse blandit, dui in vestibulum elementum, tortor nulla laoreet nisi, lacinia scelerisque eros quam vel tellus. Nam consectetur aliquam placerat. Ut eleifend, diam eu pharetra venenatis, diam urna aliquam nibh, quis condimentum libero nisi eu neque. Morbi hendrerit consectetur nulla at auctor.</p>', 1, 0, '2012-10-25 16:07:21', '2012-10-25 16:09:23', 0, 0, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -54,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `attributes_names` (
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`_id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `attributes_names`
@@ -78,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `attributes_values` (
   `name_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`_id`),
   KEY `name_id` (`name_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `attributes_values`
@@ -149,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `fruits` (
   `is_published` tinyint(1) NOT NULL DEFAULT '0',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=384 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=371 ;
 
 --
 -- Dumping data for table `fruits`
@@ -543,15 +550,14 @@ CREATE TABLE IF NOT EXISTS `sessions` (
   `lastActivity` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=131 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=141 ;
 
 --
 -- Dumping data for table `sessions`
 --
 
 INSERT INTO `sessions` (`_id`, `user_id`, `sessionId`, `ipAddress`, `userAgent`, `entryDate`, `lastActivity`) VALUES
-(128, 1, 'daif3bgj6mcv62het17lat3323', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/18.0 Firefox/18.0', '2012-10-20 17:21:32', 1350747418),
-(130, 1, '0gjqd2m5tmi2rr822smmgcscb2', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/18.0 Firefox/18.0', '2012-10-20 17:39:27', 1350749668);
+(140, 1, '4f5ibmm45qb20ftoovv2lfg310', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/18.0 Firefox/18.0', '2012-10-25 17:35:07', 1351182318);
 
 -- --------------------------------------------------------
 
@@ -566,7 +572,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `group` varchar(100) DEFAULT NULL,
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `settings`
@@ -594,7 +600,7 @@ CREATE TABLE IF NOT EXISTS `templates` (
   `metaKeywords` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`_id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `templates`
@@ -607,7 +613,9 @@ INSERT INTO `templates` (`_id`, `name`, `title`, `h1`, `h2`, `metaDescription`, 
 (6, 'dove-siamo', 'Dove Siamo', 'Dove Siamo', 'Ecco dove siamo.', 'dove siamo.', 'dove, siamo'),
 (7, 'servizi', 'Servizi', 'Servizi', 'Ecco i nostri servizi.', 'Descrizione', 'i, nostri, servizi'),
 (8, 'contatti', 'Contatti', 'Contattaci', 'Compila il modulo.', 'Contattaci', 'contatti'),
-(10, 'prodotti', 'Products', 'Products', 'Here''s a list of our products.', 'description', 'keywords');
+(10, 'prodotti', 'Products', 'Products', 'Here''s a list of our products.', 'description', 'keywords'),
+(11, 'accounts', 'Your account', 'Your account', '', '', ''),
+(12, 'news', 'News', 'Cool News', 'All your articles are listed here.', 'My website''s cool news.', 'fushi, cool, news');
 
 -- --------------------------------------------------------
 
@@ -634,7 +642,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`_id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `login` (`login`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `users`

@@ -1,0 +1,44 @@
+#registration-form {
+}
+
+#registration-form label,
+#registration-form textarea,
+#registration-form input {
+	display:block;
+	border:0;
+	padding:2px;
+}
+
+#registration-form label {
+width:150px;
+}
+
+#registration-form input {
+
+}
+
+#registration-form input[type="submit"] {
+	float:right;
+	padding:6px 24px;
+	width:auto;
+	margin-top:10px;
+}
+
+#registration-form p {
+	margin:12px 0;
+}
+
+#registration-form fieldset {
+	margin: 10px;
+	border:1px solid #ccc;
+	padding:10px;
+}
+
+#registration-form legend {
+	font-weight:bold;
+	padding:0 10px;
+}
+
+.required-asterisk {
+	color:#EA1919;
+}

@@ -7,7 +7,9 @@
 <div id=middle-column role=main class=left>
 	<h1><?=$template['h1']?></h1>
 	<h2><?=$template['h2']?></h2>
+	
 	<?php include_once INC . 'articles.php'; ?>
+	
 </div>
 <div id=right-column class=left>
 	<p>right-column paragraph with <b>bold</b>, <i>italic</i> and <u>underlined</u> sample text.</p>
