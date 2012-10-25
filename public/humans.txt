@@ -1,21 +1,23 @@
 /* OWNER */
 
-  // PLAYPC.IT di Rossi Alberto
-  Site: www.playpc.it
-  Location: Italy
+  // Company name
+	Website:
+	Location:
 
   
   
 /* DEVELOPER */
 
-  // Simone Vittori
-  Site: www.simonewebdesign.it
+  // Simone
+  Website: simonewebdesign.it
+	Twitter: @simonewebdesign
   Location: Italy
   
 
   
 /* SPECIAL THANKS TO */
 ...
+
  
   
 /* SITE */
