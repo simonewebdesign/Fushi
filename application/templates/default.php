@@ -12,6 +12,16 @@
 	<h2><?=$template['h2']?></h2>
   <p>And this is just a paragraph.</p>
 
+	<h1>BIG HOUSE<br>PARTY</h1>
+	<h2>- January 1 2013 -</h2>
+	
+	<?php include_once APP . 'countdown/countdown.php'; ?>
+
+	<div>
+		<h3>The new year is coming.</h3>
+		<a href="<?=ROOT?>accounts/register">Sign Up NOW</a> and join<br>the biggest party ever.
+	</div>	
+	
 </div>
 <div id=right-column class=left>
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed mi a sem sollicitudin

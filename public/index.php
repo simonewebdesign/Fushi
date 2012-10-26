@@ -89,7 +89,25 @@ header('Content-Type: text/html; charset=UTF-8');
   <script src="<?=ROOT?>js/ajax.js"></script>
   <script src="<?=ROOT?>js/backoffice.js"></script>
   <?php } ?>
-
+	
+	<?php if ($settings['countdown']['is_active']) { ?>
+	<script src="<?=ROOT?>js/countdown.js"></script>
+	<script>
+		jQuery(document).ready(function(){
+			$('#countdown').countDown({
+				targetDate: {
+					'day': 		<?=$settings['countdown']['day']?>,
+					'month': 	<?=$settings['countdown']['month']?>,
+					'year': 	<?=$settings['countdown']['year']?>,
+					'hour': 	<?=$settings['countdown']['hours']?>,
+					'min': 		<?=$settings['countdown']['minutes']?>,
+					'sec': 		<?=$settings['countdown']['seconds']?>
+				}
+			});
+		});
+	</script>
+	<?php } ?>
+	
   <script>
     var _gaq=[['_setAccount','<?=ANALYTICS_CODE?>'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

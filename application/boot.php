@@ -18,7 +18,7 @@ switch ($template['name']) {
 		$css .= add_css('modules/registration-form'); break;
 	
 	default:
-		;
+		$css .= add_css('modules/countdown');
 
 }
 

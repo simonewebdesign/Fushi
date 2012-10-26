@@ -1,0 +1,40 @@
+#countdown {
+	width:384px;
+	height: 66px;
+	margin: 0 auto;
+}
+	.dash {
+		width: 45px;
+		height: 30px;
+		float: left;
+		margin-top: 10px;
+		margin-left: 2px;
+		padding-left: 23px;
+		position: relative;
+	}
+		.dash .digit {
+			font: bold 14pt Verdana;
+			font-weight: bold;
+			float: left;
+			width: 16px;
+			text-align: center;
+			position: relative;
+		}
+
+	.dash_title {
+		font-size: 8pt;
+		display: block;
+		text-align: left;
+		padding-left: 3px;
+		color: red;
+	}
+
+	.info_message {
+		background-color: #0e4e6f;
+		border: 2px solid #34779a;
+		width: 200px;
+		text-align: center;
+		margin: auto;
+		padding: 5px;
+		margin-top: 10px;
+	}
