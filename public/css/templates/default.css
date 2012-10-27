@@ -7,6 +7,7 @@ html {
 
 body {
 	color: #333;
+	background: #333;
 	font-family: 'Open Sans', Arial, sans-serif;
 }
 
@@ -51,6 +52,7 @@ div {
 #wrapper {
     width: 1000px;
     margin: 0 auto;
+		background:#f3f3f3;
 }
 	#header,
 	#main,

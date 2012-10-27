@@ -9,7 +9,11 @@ if ($user) { // logged in
 	if ($template_name == 'backoffice') {
 		include_once BO . 'content.php';
 	} else {
-		echo "Welcome, <b>{$user->login}</b>";
+?>  
+      <p class="navbar-text pull-right">
+        Logged in as <a href="<?=ROOT . "users/{$user->_id}/{$user->login}"?>" class="navbar-link"><?=$user->login?></a>
+      </p>
+<?php
 	}
 	
 	

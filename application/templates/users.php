@@ -1,4 +1,4 @@
-<!-- PHP Template name: accounts -->
+<!-- PHP Template name: users -->
 
 <div id=left-column role=complementary class=left>
 	<p>left-column paragraph with <b>bold</b>, <i>italic</i> and <u>underlined</u> sample text.</p>
@@ -10,7 +10,7 @@
 	<?php 
 	
 	if ($account_action) {
-		include_once APP . "accounts/$account_action.php";
+		include_once APP . "users/{$user_action}.php";
 	}
 	
 	?>

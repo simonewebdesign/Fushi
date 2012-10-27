@@ -14,7 +14,7 @@ switch ($template['name']) {
 	case 'backoffice':
 		$css .= add_css('modules/topbar'); break;
 	
-	case 'accounts':
+	case 'users':
 		$css .= add_css('modules/registration-form'); break;
 	
 	default:
@@ -23,6 +23,6 @@ switch ($template['name']) {
 }
 
 
-if ($template_name == 'accounts') {
+if ($template_name == 'users') {
 	$account_action = isset($get[1]) ? $get[1] : false;
 }

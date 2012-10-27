@@ -1,21 +1,9 @@
-<form id=login-form method=POST>
-
+<form id=login-form method=POST class="navbar-form pull-right">
 	<fieldset>
-
-		<p>
-			<label for=username>Username</label>
-			<input id=username name=username type=text maxlength=30 required>
-		</p>
-
-		<p>
-			<label for=password>Password</label>
-			<input id=password name=password type=password maxlength=30 required>
-		</p>
-
-		<input name=login type=submit value=Login>
-
+    <input id=username class=span2 name=username type=text maxlength=30 placeholder=Username required>
+    <input id=password class=span2 name=password type=password maxlength=30 placeholder=Password required>
+    <button class=btn name=login type=submit>Log In</button>
 	</fieldset>
-
 </form>
 
 <?php if ( !empty($login_error) ) { ?>

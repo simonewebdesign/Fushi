@@ -8,20 +8,18 @@ $menu = array(
 	'prodotti' 		=> 'Prodotti',
 	'servizi' 		=> 'Servizi',
 	'contatti' 		=> 'Contatti',
-	'accounts/register' => 'Sign Up'
+	'users/register' => 'Sign Up'
 );
 
-echo "<ul class=clearfix>";
+echo '<ul class="nav">';
 
 foreach ( $menu as $menu_slug => $menu_entry ) {
 
-	$current = $menu_slug == $template_name ?: false;
+	$active = $menu_slug == $template_name ?: false;
 
-	echo "<li>";
-		if ($current) { $menu_slug.= '#'; }
-		echo '<a href="' . ROOT . $menu_slug . '"';
-		if ($current) { echo ' class=current'; }
-		echo '>' . $menu_entry . '</a>';
+  echo $active ? '<li class="active">' : '<li>';
+	if ($active) { $menu_slug .= '#'; }
+	echo '<a href="' . ROOT . $menu_slug . '">' . $menu_entry . '</a>';
 	echo "</li>";
 }
-echo "</ul>";
+echo '</ul>';
