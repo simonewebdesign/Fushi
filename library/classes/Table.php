@@ -37,18 +37,17 @@ class Table {
 		$this->db = $db;
 		$this->table_name = $table_name;
 
-		$_SESSION['table_name'] 	= isset($_SESSION['table_name']) ? $_SESSION['table_name'] : $this->table_name;
+		$_SESSION['table_name'] 	  = isset($_SESSION['table_name']) ? $_SESSION['table_name'] : $this->table_name;
 		$_SESSION['rows_per_page'] 	= (int) ( isset($_SESSION['rows_per_page']) ? $_SESSION['rows_per_page'] : $ROWS_PER_PAGE );
 		$_SESSION['start_from']	   	= $_SESSION['page'] * $_SESSION['rows_per_page'] - $_SESSION['rows_per_page'];
 		$_SESSION['order_by'] 	   	= ( isset($_SESSION['order_by']) && $_SESSION['table_name'] == $this->table_name ) ? $_SESSION['order_by'] : false;
-		$_SESSION['table_name'] 	= $this->table_name;
-		$_SESSION['order_type']		= isset($_SESSION['order_type']) ? $_SESSION['order_type'] : $ORDER_TYPE;
+		$_SESSION['table_name'] 	  = $this->table_name;
+		$_SESSION['order_type']		  = isset($_SESSION['order_type']) ? $_SESSION['order_type'] : $ORDER_TYPE;
 
-		$this->order_by 			= $_SESSION['order_by'];
-		$this->order_type 			= $_SESSION['order_type'];
-
-		$this->limit_offset 		= $_SESSION['start_from'];
-		$this->limit_row_count 		= $_SESSION['rows_per_page'];
+		$this->order_by 			  = $_SESSION['order_by'];
+		$this->order_type 		  = $_SESSION['order_type'];
+		$this->limit_offset 	  = $_SESSION['start_from'];
+		$this->limit_row_count  = $_SESSION['rows_per_page'];
 
 		$this->query = empty($query) ? "SELECT * FROM `{$table_name}`" : $query;
 		$this->query .= $this->order_by ? " ORDER BY `{$this->order_by}` {$this->order_type}" : '';
@@ -137,7 +136,16 @@ class Table {
 					'/' . $pure_action .
 					'/' . $id .
 					'" ';
-					$html .= 'class="action ' . $pure_action . '">';
+					$html .= 'class="action ' . $pure_action . ' btn btn-mini ';
+          switch ($pure_action) {
+            case 'update':
+              $html .= '';
+              break;
+            case 'delete':
+               $html .= 'btn-danger';
+              break;
+          }
+          $html .= '">';
 					$html .= $readable_action;
 					$html .= '</a>' . PHP_EOL;
 				$html .= '</td>' . PHP_EOL;
@@ -194,7 +202,8 @@ class Table {
 	*/
 	function table () {
 
-		$html = '<table>' . PHP_EOL;
+		$html = '<table class="table table-hover">' . PHP_EOL;
+    //$html .= "<caption>{$this->table_name}</caption>" . PHP_EOL;
 		$html .= $this->thead() . PHP_EOL;
 		$html .= $this->tbody() . PHP_EOL;
 		$html .= '</table>' . PHP_EOL;

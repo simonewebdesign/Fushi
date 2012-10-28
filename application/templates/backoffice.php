@@ -63,4 +63,8 @@ $update_negative = "Errore: aggiornamento fallito. Riprovare.";
 /* End default #response messages */
 
 
-include_once APP . 'users/login.php';
+if ($user) { // logged in
+  include_once BO . 'content.php';
+}
+
+//include_once APP . 'users/login.php';

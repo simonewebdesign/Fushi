@@ -79,7 +79,7 @@ class Paginator {
   function paginate() {
     /*
     */
-    $html = '<div id="pages">';
+    $html = '<div id="pages" class="pagination pagination-centered">';
       $html .= '<ul class="clearfix">';
       if ($this->elements > $this->elements_per_page) {
         if ($this->page > 0) {
@@ -94,13 +94,8 @@ class Paginator {
           }
 
           for ($i=1; $i <= $this->pages; $i++) {
-            $html .= '<li>';
-              $html .= '<a href="' . $this->URLreplacedWithPage($i) . '"';
-              if ($i == $this->page) {
-                // we're printing the current page
-                $html .= ' class="current"';
-              }
-              $html .= '>' . $i . '</a>';
+            $html .= $i == $this->page ? '<li class="active">' : '<li>'; // we're printing the current page. first was current and was in the anchor
+              $html .= '<a href="' . $this->URLreplacedWithPage($i) . '">' . $i . '</a>';
             $html .= '</li>';
           }
 

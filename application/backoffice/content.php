@@ -14,11 +14,9 @@ if ( $user->is_admin && !$user->is_deleted ) {
 		echo '</h1>';
 		echo '<h2>' . $template['h2'] . '</h2>';
 	
-		if ( $table_name ) {
+		if ($table_name) {
 			
-			if ( $table_name == 'logout' ) { 
-				include_once BO . 'logout.php'; 
-			}
+			//if ($table_name == 'logout') { include_once BO . 'logout.php'; }
 			
 			if ( file_exists( BO . $table_name . '.php' ) ) {
 			

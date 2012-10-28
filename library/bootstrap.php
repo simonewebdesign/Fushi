@@ -101,19 +101,6 @@ if ( $template_name ) {
 
 
 
-/* CSS */
-$css = '';
-$stylesheets = array(
-	'style', 						 // global CSS
-//	'helpers', 						 // custom helpers
-	'templates/' . $template['name'] // current template's CSS
-);
-foreach ($stylesheets as $stylesheet) {
-	$css.= '<link rel="stylesheet" href="' . ROOT . 'css/' . $stylesheet . '.css" media="screen">';
-}
-/* other custom stylesheets must be included inside the custom boot.php
-
-
 /* CUSTOM BOOT */
 include_once '../application/boot.php';
 

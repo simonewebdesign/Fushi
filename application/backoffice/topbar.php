@@ -12,5 +12,4 @@
 		}
 		?>
 	</div>
-	<div id="topbar_logout">Loggato come <b><?=$user->login?></b> <small>(<a href="<?=ROOT?>backoffice/logout">logout</a>)</small></div>
 </div>

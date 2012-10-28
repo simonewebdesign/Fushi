@@ -4,13 +4,13 @@ $(document).ready( function() {
 		$(this).closest('form').submit();
 	})
 
-	$('#topbar').css('top','-40px');
+	$('#topbar').css('top', 0);
 
 	function showTopbar() {
 
 		$('#topbar').animate({
-			top: 0
-		}, 2000)
+			top: '40px'
+		}, 2000);
 
 		return false;
 	}

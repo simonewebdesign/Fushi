@@ -19,7 +19,9 @@ foreach ( $menu as $menu_slug => $menu_entry ) {
 
   echo $active ? '<li class="active">' : '<li>';
 	if ($active) { $menu_slug .= '#'; }
-	echo '<a href="' . ROOT . $menu_slug . '">' . $menu_entry . '</a>';
+	echo '<a href="' . ROOT . $menu_slug . '"';
+  echo empty($menu_slug) ? ' ' : ''; // class="icon-home icon-white"
+  echo '>' . $menu_entry . '</a>';
 	echo "</li>";
 }
 echo '</ul>';

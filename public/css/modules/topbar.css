@@ -1,6 +1,6 @@
 #topbar {
 	position:fixed;
-	top:0;
+	/*top:40px;*/ /* navbar's height */
 	left:0;
 	font-size:12.45px;
 	font-family:'Segoe UI', Arial, sans-serif;

@@ -65,6 +65,8 @@ $(document).ready( function() {
 						$(this).removeClass('true')
 							   .addClass('false')
 							   .text('No')
+                 //.parent()
+                 //.addClass('error')
 						$('#response').addClass('negative')
 					} else
 					if ( $(this).hasClass('false') ) {
@@ -72,6 +74,8 @@ $(document).ready( function() {
 						$(this).removeClass('false')
 							   .addClass('true')
 							   .text('Sì')
+                 //.parent()
+                 //.addClass('error')                 
 						$('#response').addClass('positive')
 					}
 					/* end modifiche grafiche true/false */

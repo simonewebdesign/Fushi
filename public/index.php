@@ -2,7 +2,6 @@
 include_once '../library/bootstrap.php';
 header('Content-Type: text/html; charset=UTF-8');
 ?>
-
 <!DOCTYPE html>
 <html lang="<?=$settings['site']['language']?>">
 
@@ -16,11 +15,12 @@ header('Content-Type: text/html; charset=UTF-8');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?=$template['metaDescription']?>">
     <meta name="author" content="<?=$template['metaKeywords']?>">
-	<meta name="robots" content="<?=$template == 'backoffice' ? 'noindex, nofollow' : 'index, follow'?>">
+    <meta name="robots" content="<?=$template_name == 'backoffice' ? 'noindex, nofollow' : 'index, follow'?>">
 	
     <!-- Le styles -->
     <link href="<?=ROOT?>css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
+    /*
       body {
         padding-top: 60px;
         padding-bottom: 40px;
@@ -28,8 +28,10 @@ header('Content-Type: text/html; charset=UTF-8');
       .sidebar-nav {
         padding: 9px 0;
       }
+    */
     </style>
     <link href="<?=ROOT?>css/bootstrap-responsive.css" rel="stylesheet">
+    <?=$css?>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -50,28 +52,37 @@ header('Content-Type: text/html; charset=UTF-8');
       <?php include_once INC . 'navbar.php' ?>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid">    
       <!-- template content -->
       <?php include_once APP . "templates/{$template['name']}.php" ?>
-      <!--/template content -->
-      
+      <!--/template content -->     
       <hr>
-
       <footer>
         <p>Copyleft &copy; <?=YEAR?> <?=$settings['site']['name']?>. All rights reversed.</p>
       </footer>
-
     </div><!--/.fluid-container-->
 
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-    
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 
+    <!-- Twitter Bootstrap -->
+    <script src="<?=ROOT?>js/bootstrap/bootstrap.min.js"></script>    
+    <script src="<?=ROOT?>js/bootstrap/bootstrap-transition.js"></script>
+    <script src="<?=ROOT?>js/bootstrap/bootstrap-alert.js"></script>
+    <script src="<?=ROOT?>js/bootstrap/bootstrap-modal.js"></script>
+    <script src="<?=ROOT?>js/bootstrap/bootstrap-dropdown.js"></script>
+    <script src="<?=ROOT?>js/bootstrap/bootstrap-scrollspy.js"></script>
+    <script src="<?=ROOT?>js/bootstrap/bootstrap-tab.js"></script>
+    <script src="<?=ROOT?>js/bootstrap/bootstrap-tooltip.js"></script>
+    <script src="<?=ROOT?>js/bootstrap/bootstrap-popover.js"></script>
+    <script src="<?=ROOT?>js/bootstrap/bootstrap-button.js"></script>
+    <script src="<?=ROOT?>js/bootstrap/bootstrap-collapse.js"></script>
+    <script src="<?=ROOT?>js/bootstrap/bootstrap-carousel.js"></script>
+    <script src="<?=ROOT?>js/bootstrap/bootstrap-typeahead.js"></script>
+    <!--/ Twitter Bootstrap -->    
+    
     <script>
     var ROOT = '<?=ROOT?>';
     var ABSOLUTE_ROOT = '<?=ABSOLUTE_ROOT?>';
@@ -88,7 +99,7 @@ header('Content-Type: text/html; charset=UTF-8');
     <!-- Countdown -->
     <script src="<?=ROOT?>js/countdown.js"></script>
     <script>
-      jQuery(document).ready(function(){
+      $(function(){
         $('#countdown').countDown({
           targetDate: {
             'day': 		<?=$settings['countdown']['day']?>,
@@ -112,22 +123,6 @@ header('Content-Type: text/html; charset=UTF-8');
       s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>   
     <!--/ Google Analytics -->
-    
-    <!-- Twitter Bootstrap -->
-    <script src="<?=ROOT?>js/bootstrap/bootstrap.min.js"></script>    
-    <script src="<?=ROOT?>js/bootstrap/bootstrap-transition.js"></script>
-    <script src="<?=ROOT?>js/bootstrap/bootstrap-alert.js"></script>
-    <script src="<?=ROOT?>js/bootstrap/bootstrap-modal.js"></script>
-    <script src="<?=ROOT?>js/bootstrap/bootstrap-dropdown.js"></script>
-    <script src="<?=ROOT?>js/bootstrap/bootstrap-scrollspy.js"></script>
-    <script src="<?=ROOT?>js/bootstrap/bootstrap-tab.js"></script>
-    <script src="<?=ROOT?>js/bootstrap/bootstrap-tooltip.js"></script>
-    <script src="<?=ROOT?>js/bootstrap/bootstrap-popover.js"></script>
-    <script src="<?=ROOT?>js/bootstrap/bootstrap-button.js"></script>
-    <script src="<?=ROOT?>js/bootstrap/bootstrap-collapse.js"></script>
-    <script src="<?=ROOT?>js/bootstrap/bootstrap-carousel.js"></script>
-    <script src="<?=ROOT?>js/bootstrap/bootstrap-typeahead.js"></script>
-    <!--/ Twitter Bootstrap -->
     
   </body>
 </html>

@@ -1,6 +1,6 @@
-@import url('../modules/navbar.css');
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
 
+/*
 html {
 
 }
@@ -9,9 +9,11 @@ body {
 	color: #333;
 	background: #333;
 	font-family: 'Open Sans', Arial, sans-serif;
-}
+}*/
 
 /***** Links *****/
+
+/*
 a {
     color: green;
     text-decoration: none;
@@ -26,9 +28,10 @@ a {
 	a:visited {
 		color: green;
 	}
+*/  
 /***** Links *****/
 	
-/***** Forms *****/
+/***** Forms *****
 form {}
 
 	form fieldset {
@@ -43,8 +46,9 @@ form {}
 	
 	form input {}
 	form textarea {}
-/***** Forms *****/
-	
+***** Forms *****/
+
+/*	
 div {
 		box-shadow:inset 0px 0px 1px rgba(0,0,0,1);	
 }
@@ -63,6 +67,7 @@ div {
 		position:relative;
 
 	}
+*/  
 	/*	#header a {
 			display:block;
 		}

@@ -9,7 +9,7 @@
 	
 	<?php 
 	
-	if ($account_action) {
+	if (isset($user_action)) {
 		include_once APP . "users/{$user_action}.php";
 	}
 	

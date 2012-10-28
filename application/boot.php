@@ -2,6 +2,10 @@
 
 /***** The Custom Boot *****/
 
+$css = add_css('bootstrap');
+$css .= add_css('bootstrap-responsive');
+$css .= add_css("templates/{$template['name']}");
+
 $css .= add_css('classes/icons');
 $css .= add_css('modules/login-form');
 
