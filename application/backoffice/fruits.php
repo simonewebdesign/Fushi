@@ -1,6 +1,10 @@
-<h2>Frutti</h2>
+<h1>
+  Frutti
+  <small>
+    <a class="action create" href="<?=ROOT?>backoffice/<?=$table_name?>/create">Aggiungi nuovo</a>
+  </small>
+</h1>
 
-<a class="action create" href="<?=ROOT?>backoffice/<?=$table_name?>/create">Aggiungi nuovo</a>
 
 <?php
 

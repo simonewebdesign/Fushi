@@ -1,18 +1,10 @@
 <?php 
 
-include_once LIB . 'get_user_by_session_id.php';
+// I assume $user was already found from db (lookup by session_id)
 
 if ($user) { // logged in
 	
-	// do some stuff if page...
-	//if ($template_name == 'backoffice') {
-	//	include_once BO . 'content.php';
-	//} else {
-?>  
-    <!--  <p class="navbar-text pull-right">
-        Logged in as <a href="<?=ROOT . "users/{$user->_id}/{$user->login}"?>" class="navbar-link"><?=$user->login?></a>
-      </p>
-      -->
+?>
     <div class="btn-group pull-right">
       <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> <?=$user->login?></a>
       <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
@@ -31,13 +23,12 @@ if ($user) { // logged in
           <a href="#"><i class="i"></i> Make admin</a>
         </li>
       </ul>
-    </div>      
+    </div>
       
-<?php
-	//}
-	
-	
+<?php 
+
 } else { // not logged in
 
-	include_once INC . 'forms/login.php';
+  include_once INC . 'forms/login.php';
+  
 }

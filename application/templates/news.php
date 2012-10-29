@@ -1,17 +1,93 @@
 <!-- PHP Template name: news -->
 
-<div id=left-column role=complementary class=left>
-	<p>left-column paragraph with <b>bold</b>, <i>italic</i> and <u>underlined</u> sample text.</p>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices nunc sed lorem condimentum ut venenatis sapien fermentum. Integer quis risus augue. Suspendisse aliquet quam id quam commodo id tristique dolor malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce in mauris a turpis tempus vulputate vitae et justo. Integer quis cursus nisi. Integer vel neque sit amet tortor facilisis pulvinar vel at nisl.</p>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <?php include_once INC . 'navbar.php' ?>
 </div>
-<div id=middle-column role=main class=left>
-	<h1><?=$template['h1']?></h1>
-	<h2><?=$template['h2']?></h2>
-	
-	<?php include_once INC . 'articles.php'; ?>
-	
-</div>
-<div id=right-column class=left>
-	<p>right-column paragraph with <b>bold</b>, <i>italic</i> and <u>underlined</u> sample text.</p>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultrices nunc sed lorem condimentum ut venenatis sapien fermentum. Integer quis risus augue. Suspendisse aliquet quam id quam commodo id tristique dolor malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce in mauris a turpis tempus vulputate vitae et justo. Integer quis cursus nisi. Integer vel neque sit amet tortor facilisis pulvinar vel at nisl.</p>
-</div>
+
+<div class="row-fluid">
+  <div class="span3">
+    <div class="well sidebar-nav">
+      <ul class="nav nav-list">
+        <li class="nav-header">Sidebar</li>
+        <li class="active"><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li class="nav-header">Sidebar</li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li class="nav-header">Sidebar</li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+      </ul>
+    </div><!--/.well -->
+  </div><!--/span-->
+  <div class="span9">
+  
+    <div class="row-fluid">
+      <div class="span4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn" href="#">View details &raquo;</a></p>
+      </div><!--/span-->
+      <div class="span4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn" href="#">View details &raquo;</a></p>
+      </div><!--/span-->
+      <div class="span4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn" href="#">View details &raquo;</a></p>
+      </div><!--/span-->
+    </div><!--/row-->
+
+    <div class="row-fluid">
+      <div class="span4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn" href="#">View details &raquo;</a></p>
+      </div><!--/span-->
+      <div class="span4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn" href="#">View details &raquo;</a></p>
+      </div><!--/span-->
+      <div class="span4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn" href="#">View details &raquo;</a></p>
+      </div><!--/span-->
+    </div><!--/row-->
+
+    <div class="row-fluid">
+      <div class="span4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn" href="#">View details &raquo;</a></p>
+      </div><!--/span-->
+      <div class="span4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn" href="#">View details &raquo;</a></p>
+      </div><!--/span-->
+      <div class="span4">
+        <h2>Heading</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <p><a class="btn" href="#">View details &raquo;</a></p>
+      </div><!--/span-->
+    </div><!--/row-->
+    
+  </div><!--/span-->
+</div><!--/row-->
+
+<hr>
+
+<footer>
+  <p>Copyleft &copy; <?=YEAR?> <?=$settings['site']['name']?>. All rights reversed.</p>
+</footer>

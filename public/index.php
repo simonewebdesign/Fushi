@@ -18,19 +18,6 @@ header('Content-Type: text/html; charset=UTF-8');
     <meta name="robots" content="<?=$template_name == 'backoffice' ? 'noindex, nofollow' : 'index, follow'?>">
 	
     <!-- Le styles -->
-    <link href="<?=ROOT?>css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
-    /*
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-      .sidebar-nav {
-        padding: 9px 0;
-      }
-    */
-    </style>
-    <link href="<?=ROOT?>css/bootstrap-responsive.css" rel="stylesheet">
     <?=$css?>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -47,20 +34,9 @@ header('Content-Type: text/html; charset=UTF-8');
   </head>
 
   <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <?php include_once INC . 'navbar.php' ?>
-    </div>
-
-    <div class="container-fluid">    
-      <!-- template content -->
-      <?php include_once APP . "templates/{$template['name']}.php" ?>
-      <!--/template content -->     
-      <hr>
-      <footer>
-        <p>Copyleft &copy; <?=YEAR?> <?=$settings['site']['name']?>. All rights reversed.</p>
-      </footer>
-    </div><!--/.fluid-container-->
+    <!-- template content -->
+    <?php include_once TEMPLATE . $template['name'] . '.php' ?>
+    <!--/template content -->
 
     <!-- Le javascript
     ================================================== -->
@@ -68,7 +44,9 @@ header('Content-Type: text/html; charset=UTF-8');
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 
     <!-- Twitter Bootstrap -->
-    <script src="<?=ROOT?>js/bootstrap/bootstrap.min.js"></script>    
+    <script src="<?=ROOT?>js/bootstrap/bootstrap.min.js"></script>
+    
+    <!-- single plugins
     <script src="<?=ROOT?>js/bootstrap/bootstrap-transition.js"></script>
     <script src="<?=ROOT?>js/bootstrap/bootstrap-alert.js"></script>
     <script src="<?=ROOT?>js/bootstrap/bootstrap-modal.js"></script>
@@ -81,6 +59,8 @@ header('Content-Type: text/html; charset=UTF-8');
     <script src="<?=ROOT?>js/bootstrap/bootstrap-collapse.js"></script>
     <script src="<?=ROOT?>js/bootstrap/bootstrap-carousel.js"></script>
     <script src="<?=ROOT?>js/bootstrap/bootstrap-typeahead.js"></script>
+    -->
+    
     <!--/ Twitter Bootstrap -->    
     
     <script>

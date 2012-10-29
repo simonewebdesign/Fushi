@@ -7,7 +7,7 @@ var_dump($action);
 var_dump($id);
 //*/
 
-include_once FUNC . 'euro.php';
+include_once DEF . 'euro.php';
 
 if ($action == 'update') {
 
@@ -23,35 +23,41 @@ if ($action == 'update') {
 
 ?>
 
-<form method=POST action="<?=ROOT?>backoffice/<?=$table_name?>">
+<form class="form-horizontal" method=POST action="<?=ROOT?>backoffice/<?=$table_name?>">
 
-	<fieldset>
+  <fieldset>
 
-		<!--<legend></legend>-->
+    <legend>Frutto</legend>
 
-		<p>
-			<label for=name>Nome</label>
-			<input id=name name=name type=text required value="<?=isset($object->name) ? $object->name : ''?>" maxlength=100>
-		</p>
+    <div class="control-group">
+      <label class="control-label" for="name">Nome</label>
+      <div class="controls">
+        <input type="text" id="name" name="name" placeholder="Nome" value="<?=isset($object->name) ? $object->name : ''?>" required>
+      </div>
+    </div>
+    
+    <div class="control-group">
+      <label class="control-label" for="price">Prezzo</label>
+      <div class="controls">
+        <div class="input-append">
+          <input type="text" id="price" name="price" placeholder="Prezzo" value="<?=isset($object->price) ? euro($object->price, 2, false) : 0?>" maxlength=10><span class="add-on">&euro;</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="control-group">
+      <div class="controls">
+        <label for=is_published class="checkbox">
+          <input type="checkbox" id=is_published name=is_published<?=empty($object->is_published) ? '' : ' checked'?>> Pubblicato
+        </label>
+        <button name=submit type="submit" class="btn">Invio</button>
+      </div>
+    </div>
 
-		<p>
-			<label for=price>Prezzo</label>
-			<input id=price name=price type=text value="<?=isset($object->price) ? euro($object->price, 2, false) : 0?>" size=10 maxlength=10 dir=rtl>&nbsp;&euro;
-		</p>
+  </fieldset>
 
-		<p>
-			<label for=is_published>Pubblicato</label>
-			<input id=is_published name=is_published type=checkbox<?=empty($object->is_published) ? '' : ' checked'?>>
-		</p>
-
-		<p>
-			<input name=submit type=submit value=Invio>
-		</p>
-
-	</fieldset>
-
-	<!-- hidden fields -->
-	<input type=hidden name=action value=<?=$action?>>
-	<input type=hidden name=id value=<?=$id?>>
+  <!-- hidden fields -->
+  <input type=hidden name=action value=<?=$action?>>
+  <input type=hidden name=id value=<?=$id?>>
 
 </form>

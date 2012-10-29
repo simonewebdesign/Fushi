@@ -1,7 +1,7 @@
 <?php
 
 if ( $user->is_admin && !$user->is_deleted ) {
-	//user has admin privileges
+
 	$verbose[] = "(content.php) user n. {$user->_id} has admin privileges.";
 	$verbose[] = "(content.php) showing backoffice's content...";
 	
@@ -21,7 +21,14 @@ if ( $user->is_admin && !$user->is_deleted ) {
 			if ( file_exists( BO . $table_name . '.php' ) ) {
 			
 				include BO . $table_name . '.php';
-				
+      
+      <?php if ( isset($alert) || isset($success) || isset($error) ) {} ?>
+        echo '<div class="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Warning!</strong> Best check yo self, youre not looking too good.</div>';
+        
+        echo '<div id="response"></div>';        
+        
 				/* begin response */
 				$html_response = '<div id="response"';
 				
@@ -41,12 +48,6 @@ if ( $user->is_admin && !$user->is_deleted ) {
 						$html_response.= ' negative';
 					}
 					$html_response.= '" style="display:block">' . $response;
-					
-					/* debug
-					var_dump($response);
-					var_dump($positive);
-					var_dump($negative);
-					//*/
 					
 				} else {
 					$html_response.= '>';

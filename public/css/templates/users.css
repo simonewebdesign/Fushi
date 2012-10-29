@@ -1,12 +1,13 @@
 /*** CSS Template name: users ***/
 
-@import url('default.css');
-#left-column {
-
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
-#middle-column {
-
+.sidebar-nav {
+  padding: 9px 0;
 }
-#right-column {
 
+.navbar {
+  box-shadow: 0 3px 3px rgba(0,0,0,.2);
 }

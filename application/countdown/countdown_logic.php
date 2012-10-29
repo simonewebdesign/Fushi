@@ -9,6 +9,7 @@
 		$countdown->{$row->name} = $row->value;
 	}
 */
+  $is_included = true;
 
 	$target = mktime( // returns the target timestamp
 		$settings['countdown']['hours'], 

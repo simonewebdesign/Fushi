@@ -1,131 +1,45 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
-
-/*
-html {
-
-}
+/* default template */
 
 body {
-	color: #333;
-	background: #333;
-	font-family: 'Open Sans', Arial, sans-serif;
-}*/
-
-/***** Links *****/
-
-/*
-a {
-    color: green;
-    text-decoration: none;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
-	a:link {}
-	a:hover {
-		text-decoration: underline;
-	}
-	a:active {
-		color: white;
-	}
-	a:visited {
-		color: green;
-	}
-*/  
-/***** Links *****/
-	
-/***** Forms *****
-form {}
-
-	form fieldset {
-		border-radius:2px;
-	}
-	
-	form input,
-	form textarea {
-		box-shadow:inset 0px -1px 2px rgba(0,0,0,.1);
-		border:none;
-	}
-	
-	form input {}
-	form textarea {}
-***** Forms *****/
-
-/*	
-div {
-		box-shadow:inset 0px 0px 1px rgba(0,0,0,1);	
+.sidebar-nav {
+  padding: 9px 0;
 }
-	
-#wrapper {
-    width: 1000px;
-    margin: 0 auto;
-		background:#f3f3f3;
+
+.navbar {
+  box-shadow: 0 3px 3px rgba(0,0,0,.2);
 }
-	#header,
-	#main,
-	#footer {
-		text-align:center;
-	}
-	#header {
-		position:relative;
 
-	}
-*/  
-	/*	#header a {
-			display:block;
-		}
-	*/
-	#main {}
-	#footer {}
-		
-		/*** #main content ***/
-		
-		#left-column,
-		#middle-column,
-		#right-column {
+.carousel-caption {
+  background:rgba(0,0,0,.5);
+  text-align:center;
 
-		}
-		
-		#left-column {
-			width:250px;
-			/*height:500px;*/
-		}
-		#middle-column {
-			width:500px;
-			/*height:500px;*/
-			min-height:500px;
-		}
-		#right-column {
-			width:250px;
-			/*height:500px;*/
-			
-			text-align:justify;			
-		}
+  width:50%;
+  height:50%;
+  margin:auto;
+  top:10%;
+  
+  font-size:1.5em;
+  
+  text-shadow:0 2px 2px black;
+}
 
-		#outer-footer {
-			text-align:center;
-		}
-			#outer-footer a {
-				font-size:.7em;
-			}
-
-/* Pagination */
-#pages {}
-  #pages ul {
-    list-style:none;
+  .carousel-caption h1 {
+    color:white;
+    font-size:2.5em;    
   }
-    #pages ul li {}
-      #pages ul li a {
-        display:block;
-        width:25px;
-        height:25px;
-        float:left;
-        border:1px solid black;
-        line-height:25px;
-        text-align:center;
-        margin:1px;
-        border-radius:3px;
-      }
-      #pages a.current{
-        color:red;
-      }
+  
+  .carousel-caption p {
+    line-height:1.2em;
+    margin:1em auto;
+  }  
+  
+  .carousel-caption a.btn {
+    font-size:1.2em;  
+  }
+
 
 /* special */
 ::-moz-selection {}

@@ -50,6 +50,7 @@ include_once LIB . 'settings.php';
 
 /* SESSION */
 include_once LIB . 'session.php';
+include_once LIB . 'get_user_by_session_id.php';
 
 
 /* TRE - TEMPLATE RENDERING ENGINE */

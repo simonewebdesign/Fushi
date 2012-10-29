@@ -9,7 +9,7 @@ define('ABSOLUTE_ROOT', 'http://localhost/fushi/');
 define('APP',			'../application/');
 define('LIB',			'../library/');
 define('CLASS',		'../library/classes/');
-define('FUNC', 		'../library/functions/');
+define('DEF', 		'../library/functions/');
 define('CFG',			'../config/');
 define('TEMPLATE','../application/templates/');
 define('INC',			'../application/includes/');

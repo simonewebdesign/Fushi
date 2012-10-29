@@ -62,9 +62,16 @@ $update_negative = "Errore: aggiornamento fallito. Riprovare.";
 //$delete_negative = "Errore: eliminazione fallita. Riprovare.";
 /* End default #response messages */
 
+?>
 
-if ($user) { // logged in
-  include_once BO . 'content.php';
-}
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <?php include_once INC . 'navbar.php' ?>
+</div>
 
-//include_once APP . 'users/login.php';
+<div class="container-fluid">
+  <?php if ($user) { include_once BO . 'content.php'; } ?>
+</div>
+
+<footer>
+  <p>Copyleft &copy; <?=YEAR?> <?=$settings['site']['name']?>. All rights reversed.</p>
+</footer>

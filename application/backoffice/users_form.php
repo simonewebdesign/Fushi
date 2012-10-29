@@ -1,6 +1,6 @@
 <?php /* form injected via Ajax */
 
-//* debug
+/* debug
 var_dump($template_name);
 var_dump($table_name);
 var_dump($action);
@@ -14,7 +14,7 @@ if ($action == 'update') {
 
 	$object_db = $db->query("SELECT * FROM `$table_name` WHERE `_id`={$id}");
 	$object = $object_db->fetchObject();
-	//* debug
+	/* debug
 	var_dump($object);
 	//*/
 }

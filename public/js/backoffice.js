@@ -9,7 +9,7 @@ $(document).ready( function() {
 	function showTopbar() {
 
 		$('#topbar').animate({
-			top: '40px'
+			top: '41px'
 		}, 2000);
 
 		return false;

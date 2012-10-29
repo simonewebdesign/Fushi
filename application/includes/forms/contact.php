@@ -4,12 +4,24 @@ if (isset($_POST['submit'])) {
 	$header = "From: ".$_POST['name']." <".$_POST['email'].">";
 
 	/* mail(to,subject,message,additional_headers,additional_parameters) */
-	if (!mail(MAIL_TO, $_POST['subject'], $_POST['message'], $header))
-		echo "<p style='color:#800'>Il messaggio non è stato inviato. Riprovare.</p>";
-	else
-		echo "<p style='color:green'>Il messaggio è stato recapitato correttamente.</p>";
-}
+	if ( mail(MAIL_TO, $_POST['subject'], $_POST['message'], $header) ) {
 ?>
+    <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4>Messaggio inviato correttamente</h4>
+    Ti risponderemo al più presto.
+    </div>
+  
+<?php }	else { ?>
+
+    <div class="alert alert-error">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4>Errore</h4>
+    Il messaggio non è stato inviato. Riprovare.
+    </div>
+    
+<?php }
+  } ?>
 
 <form id=contact-form method=POST action="<?=ROOT?>contatti">
 

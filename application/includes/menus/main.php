@@ -3,11 +3,9 @@
 $menu = array(
 	'' 						=> 'Home',
 	'news'				=> 'News',
-	'chi-siamo'  	=> 'Chi Siamo',
-	'dove-siamo' 	=> 'Dove Siamo',
 	'prodotti' 		=> 'Prodotti',
-	'servizi' 		=> 'Servizi',
 	'contatti' 		=> 'Contatti',
+  '404'         => '404',
 	'users/register' => 'Sign Up'
 );
 
