@@ -1,4 +1,4 @@
-![Fushi PHP Boilerplate](https://github.com/simonewebdesign/Fushi/master/img/fushi-logo.png)
+![Fushi PHP Boilerplate](https://raw.github.com/simonewebdesign/Fushi/master/public/img/fushi-logo.png)
 
 Introduction
 ------------
