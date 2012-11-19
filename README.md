@@ -1,6 +1,4 @@
-Fushi PHP Boilerplate
-=====================
-
+![Fushi PHP Boilerplate](https://github.com/simonewebdesign/Fushi/master/img/fushi-logo.png)
 
 Introduction
 ------------
@@ -237,7 +235,7 @@ FAQ (Frequently Asked Questions)
 
 **Q:** I've uploaded every single file in the root of my web server, but Fushi throws weird errors like *unexpected T_FUNCTION*...
 
-**A:** Make sure you have uploaded everything in binary mode.
+**A:** Make sure you upload everything in binary mode.
 
 
 
