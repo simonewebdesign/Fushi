@@ -246,5 +246,6 @@ FAQ (Frequently Asked Questions)
 Thank you for using Fushi! You are awesome!
 
 
+[![Open Source](https://raw.github.com/simonewebdesign/Fushi/master/public/img/opensource-75x65-t.png)](http://www.opensource.org/docs/definition.php)
 
 This content is released under the [MIT License](https://github.com/simonewebdesign/Fushi/blob/master/LICENSE.md).
