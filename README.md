@@ -5,7 +5,7 @@ Introduction
 
 Fushi is a simple, lightweight PHP boilerplate (definition of [Boilerplate on Wikipedia](http://en.wikipedia.org/wiki/Boilerplate_code)).
 
-It can be used for building a large variety of projects, small and large. 
+It can be used for building a large variety of projects, small and large.
 
 It has a very simple but powerful built-in templating system, as well as a pretty backend interface.
 
@@ -86,13 +86,13 @@ In alphabetical order and in a tree-structured way, I'll proceed describing the 
         - **tinymce** the TinyMCE editor, needed by backoffice.
         - **galleria** jQuery galleria plugin.
         - **fancybox** just another freaking jQuery plugin.
-- **scripts** any script that could reveal useful.	
+- **scripts** any script that could reveal useful.
 - **tmp** unused.
     - **cache** unused.
     - **logs** unused.
     - **sessions** unused.
-    
-    
+
+
 ### Global Variables
 
 In the most important file, `bootstrap.php`, are declared some fundamental variables:
@@ -109,7 +109,7 @@ In the most important file, `bootstrap.php`, are declared some fundamental varia
     - `$template['metaKeywords']`
 - **$css** contains the links to the main stylesheets: `style.css` and `templates/$template_name.css` (the current template's CSS).
 - *Backoffice only:*
-    - **$table_name** 
+    - **$table_name**
     - **$action**
     - **$id**
 
@@ -237,9 +237,14 @@ FAQ (Frequently Asked Questions)
 
 **A:** Make sure you upload everything in binary mode.
 
+--
+
+**Q:** I get a 500: Internal Server Error. What can I do?
+
+**A:** This is usually related to `.htaccess` files. Please check your webserver's log.
 
 
-**Please [open a new issue](https://github.com/simonewebdesign/Fushi/issues/new) if you have a question.**
+**Please [open a new issue](https://github.com/simonewebdesign/Fushi/issues/new) if you have any questions.**
 
 
 
