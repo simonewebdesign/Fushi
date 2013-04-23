@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Fushi by simonewebdesign</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Fushi</h1>
+          <h2>A very simple and lightweight PHP boilerplate.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/simonewebdesign/Fushi/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/simonewebdesign/Fushi/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/simonewebdesign/Fushi" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <p><img src="https://raw.github.com/simonewebdesign/Fushi/master/public/img/fushi-logo.png" alt="Fushi PHP Boilerplate"></p>
+
+<h2>Introduction</h2>
+
+<p>Fushi is a simple, lightweight PHP boilerplate (definition of <a href="http://en.wikipedia.org/wiki/Boilerplate_code">Boilerplate on Wikipedia</a>).</p>
+
+<p>It can be used for building a large variety of projects, small and large.</p>
+
+<p>It has a very simple but powerful built-in templating system, as well as a pretty backend interface.</p>
+
+<h2>Features</h2>
+
+<ul>
+<li>Modular, scalable and SEO friendly CSS frontend engine</li>
+<li>Helper classes and functions for managing database tables</li>
+<li>Helper class for pagination</li>
+<li>A whole bunch of functions for a variety of tasks (see <code>library/functions/</code>)</li>
+<li>SEO friendly URL rewrites</li>
+<li>A powerful and secure session engine</li>
+<li>Automagically add a new template that inherits CSS from the default one</li>
+<li>User-friendly backoffice UI</li>
+<li>gzip compression support</li>
+</ul><h2>Requirements</h2>
+
+<p>In order to run Fushi, you just need:</p>
+
+<ul>
+<li>an Apache web server</li>
+<li>PHP 5.2 or newer (it should potentially run in earlier versions, although I haven't tested yet.)</li>
+<li>You must enable <em>rewrite_module</em> in Apache and <em>short open tag</em> in PHP settings.</li>
+</ul><h2>Getting started</h2>
+
+<ol>
+<li>Upload everything in the root of your web server.</li>
+<li>Open <code>/db</code> folder and create a new database with the provided MySQL dump.</li>
+<li>Go to <code>/config</code> folder and edit <code>database.php</code>. You'll also need to edit <code>paths.php</code> in the same folder.</li>
+</ol><p>If you have edited the above files properly, just surf to the root of your website and you should be able to see the home page.</p>
+
+<p><strong>Having trouble during installation? <a href="https://github.com/simonewebdesign/Fushi/issues/new">Please let me know</a>.</strong></p>
+
+<h2>Documentation</h2>
+
+<h3>File System</h3>
+
+<p>In alphabetical order and in a tree-structured way, I'll proceed describing the folders and their content.</p>
+
+<ul>
+<li>
+<strong>application</strong> all files relative to the application itself.
+
+<ul>
+<li>
+<strong>backoffice</strong> backend interface files.</li>
+<li>
+<strong>includes</strong> files that can be included inside templates.
+
+<ul>
+<li><strong>forms</strong></li>
+<li><strong>galleries</strong></li>
+<li><strong>lists</strong></li>
+<li><strong>menus</strong></li>
+</ul>
+</li>
+<li>
+<strong>templates</strong> all templates (backoffice included).</li>
+</ul>
+</li>
+<li>
+<strong>config</strong> configuration files (only constants here, <em>not</em> variables).</li>
+<li>
+<strong>db</strong> database dump (*.sql)</li>
+<li>
+<strong>library</strong> The core of Fushi.
+
+<ul>
+<li><strong>classes</strong></li>
+<li><strong>functions</strong></li>
+<li><strong>session</strong></li>
+</ul>
+</li>
+<li>
+<strong>public</strong> the only folder publicly accessible.
+
+<ul>
+<li>
+<strong>css</strong>
+
+<ul>
+<li>
+<strong>classes</strong> css classes, usually reusable many times inside your app.</li>
+<li>
+<strong>modules</strong> css modules, (unique and independent parts of your app).</li>
+<li>
+<strong>templates</strong> css relative to single templates.</li>
+</ul>
+</li>
+<li>
+<strong>fonts</strong> custom fonts (I personally use fontsquirrel.com)</li>
+<li>
+<strong>img</strong> all images.</li>
+<li>
+<strong>icons</strong> only sweetieplus by default.
+
+<ul>
+<li><strong>sweetieplus</strong></li>
+</ul>
+</li>
+<li>
+<strong>js</strong> all the JavaScript scripts.
+
+<ul>
+<li>
+<strong>libs</strong> all the needed libraries (only jQuery by default).</li>
+</ul>
+</li>
+<li>
+<strong>media</strong> multimedia files.
+
+<ul>
+<li><strong>pdf</strong></li>
+<li><strong>video</strong></li>
+</ul>
+</li>
+<li>
+<strong>static</strong> static HTML docs.
+
+<ul>
+<li>
+<strong>errordocs</strong> HTTP error files (403 Forbidden, 404 Not Found, 500 Internal Server Error etc).</li>
+</ul>
+</li>
+<li>
+<strong>plugins</strong>
+
+<ul>
+<li>
+<strong>tinymce</strong> the TinyMCE editor, needed by backoffice.</li>
+<li>
+<strong>galleria</strong> jQuery galleria plugin.</li>
+<li>
+<strong>fancybox</strong> just another freaking jQuery plugin.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<strong>scripts</strong> any script that could reveal useful.</li>
+<li>
+<strong>tmp</strong> unused.
+
+<ul>
+<li>
+<strong>cache</strong> unused.</li>
+<li>
+<strong>logs</strong> unused.</li>
+<li>
+<strong>sessions</strong> unused.</li>
+</ul>
+</li>
+</ul><h3>Global Variables</h3>
+
+<p>In the most important file, <code>bootstrap.php</code>, are declared some fundamental variables:</p>
+
+<ul>
+<li>
+<strong>$get</strong> is the <code>$_GET</code> array sanitized. It actually discards every variable in the URL that contains specials characters. It only accepts numbers, letters, hyphens and underscores.</li>
+<li>
+<strong>$template_name</strong> is the name of the current template, getted from the URL. It equals <code>$get[0]</code>.</li>
+<li>
+<strong>$template</strong> is an array taken from the database, containing the current template data:
+
+<ul>
+<li><code>$template['_id']</code></li>
+<li><code>$template['name']</code></li>
+<li><code>$template['title']</code></li>
+<li><code>$template['h1']</code></li>
+<li><code>$template['h2']</code></li>
+<li><code>$template['metaDescription']</code></li>
+<li><code>$template['metaKeywords']</code></li>
+</ul>
+</li>
+<li>
+<strong>$css</strong> contains the links to the main stylesheets: <code>style.css</code> and <code>templates/$template_name.css</code> (the current template's CSS).</li>
+<li>
+<em>Backoffice only:</em>
+
+<ul>
+<li><strong>$table_name</strong></li>
+<li><strong>$action</strong></li>
+<li><strong>$id</strong></li>
+</ul>
+</li>
+</ul><h3>Frontend (CSS)</h3>
+
+<p>The frontend engine is based upon the <a href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate</a> (v3.0.2, released on feb 19, 2012).</p>
+
+<p>You're completely free to organize and manage your CSS as you wish: however I suggest you trying to maintain your structure as modular as possible. You can always use <code>@import url('style.css');</code> but this is discouraged. Use <code>application/boot.php</code> to arbitrarily import:</p>
+
+<ul>
+<li>Classes from  <code>public/css/classes/</code>;</li>
+<li>Modules from  <code>public/css/modules/</code>;</li>
+<li>Templates from    <code>public/css/templates/</code>.</li>
+</ul><p>So remember that when your web application has a modular piece (i.e. an header or footer), you can declare it as <em>module</em> and subsequently recall it in a specific template; you can even create new templates based on the concept of inheritance!</p>
+
+<p>These "non-semantic helper classes" are available:</p>
+
+<ul>
+<li><code>.ir</code></li>
+<li><code>.hidden</code></li>
+<li><code>.visuallyhidden</code></li>
+<li><code>.invisible</code></li>
+<li><code>.clearfix</code></li>
+</ul><p>For the explaining I recommend you reading the h5bp documentation: <a href="http://html5boilerplate.com/docs">http://html5boilerplate.com/docs</a></p>
+
+<p>The classes <code>.left</code> and <code>.right</code> just make block elements float to left or right respectively.</p>
+
+<h3>JavaScript</h3>
+
+<p>Just two words on JavaScript: <code>script.js</code> is the main JS file, that loads automatically in every page.
+Besides that, you're free to load all <em>.js</em> files you want.</p>
+
+<p><a href="http://jquery.com">jQuery</a> is the Fushi's default library; if you need a different one, add it in <code>public/js/libs/</code> folder. If you need a jQuery plugin, add it in <code>public/plugins/</code> folder.</p>
+
+<h3>Ajax</h3>
+
+<p>The <code>public/js/ajax.js</code> file is responsible for managing <strong>all Ajax requests</strong>, and strictly collaborates with <code>public/ajax.php</code>.</p>
+
+<p>A detailed explaining of an Ajax request in Fushi:</p>
+
+<ol>
+<li>User clicks on a link.</li>
+<li>If that link has <code>class=action</code>, it will do an Ajax request.</li>
+<li>
+<code>ajax.php</code> will be loaded, and it will read the <code>href</code> attribute.</li>
+<li>The <code>href</code> will be parsed and Ajax will route to the right file.</li>
+<li>The right file will be executed.</li>
+<li>The <code>&lt;div id=response&gt;</code> will output the HTML.</li>
+</ol><p>A concrete example:</p>
+
+<ol>
+<li>User clicks on <code>&lt;a class="action update" href="fruit/update/3"&gt;Update this!&lt;/a&gt;</code>.</li>
+<li>
+<code>ajax.js</code> loads <code>ajax.php</code>, passing the <code>href</code> to it (<code>fruit/update/3</code>).</li>
+<li>
+<code>ajax.php</code> realizes that <code>fruit_update.php</code> must be executed.</li>
+<li>
+<code>ajax.js</code> outputs the HTML returned by <code>fruit_update.php</code>.</li>
+</ol><h3>The Backend (aka Backoffice)</h3>
+
+<p>You can access to the backend interface by <code>http://yoursite.com/backoffice</code>.</p>
+
+<p>Example user (administrator):</p>
+
+<ul>
+<li>Username: <strong>admin</strong>
+</li>
+<li>Password: <strong>demo</strong>
+</li>
+</ul><p>Example user (no administrator privileges):</p>
+
+<ul>
+<li>Username: <strong>demo</strong>
+</li>
+<li>Password: <strong>demo</strong>
+</li>
+</ul><p>However, you can't see anything in the backend if you have no admin privileges. Even though you try to login (or you're already logged in), in every circumstance you're just going to be redirected to the index.</p>
+
+<p>The backend interface is based on the CRUD (create, read, update, delete).
+Every table has usually 3 files in <code>application/backoffice/</code>.</p>
+
+<p>For example:</p>
+
+<p>Table: <strong>Products</strong></p>
+
+<p>Files:</p>
+
+<ul>
+<li><code>products.php</code></li>
+<li><code>products_form.php</code></li>
+<li><code>products_read.php</code></li>
+</ul><p>The 3 files above are handling all the operations behind the <code>Product</code> object.</p>
+
+<p>As for <em>convention over configuration</em>, the table names must always be in plural form.</p>
+
+<p>From the backoffice you can also generate a template scaffold, but beware: you can't rename a template. If you need to delete a whole template, just remove its files: one is in <code>application/templates/</code>, and the other one is in <code>public/css/templates/</code>.</p>
+
+<h3>Sessions</h3>
+
+<p>Sessions are automatically handled by <code>lib/session.php</code>.
+You will always have the following variables available globally:</p>
+
+<ul>
+<li>
+<code>$session</code>
+
+<ul>
+<li><code>_id</code></li>
+<li><code>user_id</code></li>
+<li><code>sessionId</code></li>
+<li><code>ipAddress</code></li>
+<li><code>userAgent</code></li>
+<li><code>entryDate</code></li>
+<li><code>lastActivity</code></li>
+</ul>
+</li>
+<li>
+<code>$user</code>
+
+<ul>
+<li><code>_id</code></li>
+<li><code>login</code></li>
+<li><code>name</code></li>
+<li><code>surname</code></li>
+<li><code>email</code></li>
+<li><code>password</code></li>
+<li><code>address</code></li>
+<li><code>cap</code></li>
+<li><code>city</code></li>
+<li><code>bio</code></li>
+<li><code>is_admin</code></li>
+<li><code>is_deleted</code></li>
+<li><code>created_at</code></li>
+<li><code>updated_at</code></li>
+<li><code>birthday</code></li>
+</ul>
+</li>
+</ul><h2>FAQ (Frequently Asked Questions)</h2>
+
+<p><strong>Q:</strong> I've uploaded every single file in the root of my web server, but Fushi throws weird errors like <em>unexpected T_FUNCTION</em>...</p>
+
+<p><strong>A:</strong> Make sure you upload everything in binary mode.</p>
+
+<h2></h2>
+
+<p><strong>Q:</strong> I get a 500: Internal Server Error. What can I do?</p>
+
+<p><strong>A:</strong> This is usually related to <code>.htaccess</code> files. Please check your webserver's log.</p>
+
+<h2></h2>
+
+<p><strong>Please <a href="https://github.com/simonewebdesign/Fushi/issues/new">open a new issue</a> if you have any questions.</strong></p>
+
+<p>Thank you for using Fushi! You are awesome!</p>
+
+<p><a href="http://www.opensource.org/docs/definition.php"><img src="https://raw.github.com/simonewebdesign/Fushi/master/public/img/opensource-75x65-t.png" alt="Open Source"></a></p>
+
+<p>This content is released under the <a href="https://github.com/simonewebdesign/Fushi/blob/master/LICENSE.md">MIT License</a>.</p>
+        </section>
+
+        <footer>
+          Fushi is maintained by <a href="https://github.com/simonewebdesign">simonewebdesign</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
