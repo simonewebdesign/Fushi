@@ -582,7 +582,14 @@ INSERT INTO `settings` (`_id`, `name`, `value`, `group`, `is_deleted`) VALUES
 (1, 'name', 'Fushi PHP Boilerplate', 'site', 0),
 (2, 'bool_var', '0', 'examples', 0),
 (3, 'int_var', '12', 'examples', 0),
-(8, 'last_connected_users', '10', 'backoffice', 0);
+(8, 'last_connected_users', '10', 'backoffice', 0),
+(9, 'is_active', 'true', 'countdown', 0),
+(10, 'year', '2015', 'countdown', 0),
+(11, 'day', '12', 'countdown', 0),
+(12, 'month', '12', 'countdown', 0),
+(13, 'hours', '12', 'countdown', 0),
+(14, 'minutes', '12', 'countdown', 0),
+(15, 'seconds', '12', 'countdown', 0);
 
 -- --------------------------------------------------------
 

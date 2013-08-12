@@ -1,6 +1,9 @@
 <!-- default template -->
 
 <div id=left-column class=left>
+
+<?php var_dump($user); ?>
+
 	<p>This is an example paragraph. Please login.<br>
 	Username: <b>demo</b><br>
 	Password: <b>demo</b></p>
