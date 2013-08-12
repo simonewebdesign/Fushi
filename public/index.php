@@ -73,7 +73,7 @@ header('Content-Type: text/html; charset=UTF-8');
 
   </div>
 
-  <!-- End of Content /// JavaScript Begin --->
+  <!-- End of Content /// JavaScript Begin -->
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>

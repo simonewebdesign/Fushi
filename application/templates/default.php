@@ -2,12 +2,20 @@
 
 <div id=left-column class=left>
 
-<?php var_dump($user); ?>
+<?php include_once APP . 'accounts/login.php' ?>
+
+<?php if ($session->user_id > 0) { ?>
+
+	<p>You are logged in.</p>
+
+<?php } else { ?>
 
 	<p>This is an example paragraph. Please login.<br>
 	Username: <b>demo</b><br>
 	Password: <b>demo</b></p>
-	<?php include_once APP . 'accounts/login.php' ?>
+
+<?php } ?>
+
 	<p>Questo è un paragrafo d'esempio. Lorem ipsum dolor sit amet, consecutetur adipiscing elit.</p>		
 </div>
 <div id=middle-column class=left role=main>
